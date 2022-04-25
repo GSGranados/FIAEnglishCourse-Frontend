@@ -1,8 +1,7 @@
-
 function App() {
   return (
     <div className="App">
-      FIA-EC Platform     
+      <h1 className="text-3xl font-bold underline bg-wine-red text-white-text font-sans">Hello world!</h1>
     </div>
   );
 }

@@ -1,1 +1,7 @@
-//THIS IS THE REDUCERS INDEX
+
+import { combineReducers } from "redux";
+
+export default combineReducers({
+    user: 'Usuario',
+    roles: 'PeneRole'
+})
