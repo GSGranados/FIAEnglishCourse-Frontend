@@ -1,7 +1,14 @@
+import { Sidebar } from "./components/Utilities/sidebar";
+import  {Navbar}  from "./components/Utilities/navbar";
+import Router from "./components/Routes/Router";
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline bg-wine-red text-white-text font-sans">Hello world!</h1>
+    <div className="flex h-full">
+      <Sidebar />
+      <div className="w-full h-full">
+        <Navbar />
+        <Router />
+      </div>
     </div>
   );
 }

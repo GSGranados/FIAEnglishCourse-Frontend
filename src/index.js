@@ -5,14 +5,24 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import reducers from "./reducers";
 import { Provider } from "react-redux";
-import { legacy_createStore as createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter } from "react-router-dom";
+
+library.add(fab, faCheckSquare, faCoffee);
+
+const store = configureStore({
+  reducer: reducers
+})
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={createStore(reducers)}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+  <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
   </Provider>
 );
 

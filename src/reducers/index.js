@@ -1,7 +1,8 @@
 
 import { combineReducers } from "redux";
-
+import { reducer as formReducer } from "redux-form";
+import permissionsReducer from "./permissions/permissionsReducer";
 export default combineReducers({
-    user: 'Usuario',
-    roles: 'PeneRole'
+   permissions: permissionsReducer,
+   form: formReducer
 })
