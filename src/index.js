@@ -5,24 +5,28 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import reducers from "./reducers";
 import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
+import { legacy_createStore as createStore, applyMiddleware, compose } from "redux";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { BrowserRouter } from "react-router-dom";
+import CustomRouter from './CustomRouter'
+import history from './history'
+import reduxThunk from "redux-thunk";
 
 library.add(fab, faCheckSquare, faCoffee);
 
-const store = configureStore({
-  reducer: reducers
-})
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(reduxThunk))
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-      <BrowserRouter>
+      <CustomRouter history={history}>
         <App />
-      </BrowserRouter>
+      </CustomRouter>
   </Provider>
 );
 

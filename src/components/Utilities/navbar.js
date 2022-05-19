@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUserCircle,faBars,faClose,} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const Navbar = () => {
   const links = [
     { name: "Tuitions", link: "/" },
@@ -16,12 +16,12 @@ export const Navbar = () => {
         {item.name === "faUserCircle" ? (
             <FontAwesomeIcon icon={faUserCircle} size="xl" className="tablet:hidden cursor-pointer" />
         ) : (
-          <Link
+          <NavLink
             to={item.link}
             className="text-white-text-100 hover:text-opacity-80 duration-300"
           >
             {item.name}
-          </Link>
+          </NavLink>
         )}
       </li>
     );
@@ -47,9 +47,9 @@ export const Navbar = () => {
         >
           {formattedListItems}
           <li className="md:ml-8 text-xl md:my-0 my-7">
-            <Link to="/" className="text-white-text-100 hover:text-opacity-80 duration-300 md:hidden">
+            <NavLink to="/" className="text-white-text-100 hover:text-opacity-80 duration-300 md:hidden">
                 My Profile
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "PLATFORM_ADMIN"
+      },
+      {
+        "id": 2,
+        "name": "PLATFORM_TUTOR"
+      },
+      {
+        "id": 3,
+        "name": "PLATFORM_STUDENT"
+      }
+    ]
+  },
+  "permissions2": [
+    {
+      "id": 1,
+      "name": "PLATFORM_ADMIN_EDITED"
+    },
+    {
+      "id": 2,
+      "name": "PLATFORM_TUTOR"
+    },
+    {
+      "id": 3,
+      "name": "PLATFORM_STUDENT"
+    },
+    {
+      "permissionName": "TEST_PERMISSION",
+      "id": 4
+    }
+  ]
+}

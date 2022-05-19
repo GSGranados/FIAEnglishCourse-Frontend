@@ -1,30 +1,35 @@
+import _ from "lodash";
+import {
+  CREATE_PERMISSION,
+  FETCH_PERMISSIONS,
+  FETCH_PERMISSION,
+  DELETE_PERMISSION,
+  EDIT_PERMISSION,
+} from "../../actions/types";
 
-import { createSlice } from "@reduxjs/toolkit"
-
-const initialialState = {
-    isLoading: false,
-    permissions: [],
-    errorMsg: ""
+const initialState = {
+  isLoading: false,
+  permissions: [],
+  columns: [],
+  error: null
 }
 
-const permissionsSlice = createSlice({
-    name:"permissions",
-    initialState: initialialState,
-    reducers:{
-        getPermissions(state,action){
-            state.isLoading = true;
-        },
-        getPermissionsSuccess(state,action){
-            state.isLoading = false;
-            state.permissions = action.payload;
-        },
-        getPermissionsFail(state,action){
-            state.errorMsg = `There was an error retrieving the data: ${action.payload}`
-        }
-    }
-})
-
-
-export const {getPermissions,getPermissionsSuccess,getPermissionsFail} = permissionsSlice.actions;
-
-export default permissionsSlice.reducer;
+export const permissionsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_PERMISSIONS:
+      return { ...state, 
+        permissions: action.payload.data,
+        columns: action.payload.columns
+      };
+    case FETCH_PERMISSION:
+      return { ...state, [action.payload.id]: action.payload };
+    case CREATE_PERMISSION:
+      return { ...state, [action.payload.id]: action.payload };
+    case EDIT_PERMISSION:
+      return { ...state, [action.payload.id]: action.payload };
+    case DELETE_PERMISSION:
+      return _.omit(state, action.payload);
+    default:
+      return state;
+  }
+}
