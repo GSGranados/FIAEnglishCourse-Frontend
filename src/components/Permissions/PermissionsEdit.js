@@ -9,7 +9,6 @@ class PermissionsEdit extends Component {
 
     async componentDidMount() {
       const permissionId = Number(history.location.pathname.split("/")[3]);
-      console.log(permissionId);
       await this.props.fetchPermission(permissionId);
     }
     
@@ -35,7 +34,7 @@ class PermissionsEdit extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        permission: state.permissions.permissions[Number(history.location.pathname.split("/")[3])],
+        permission: state.permissions.permissions[Number(history.location.pathname.split("/")[3])-1],
     };
   };
 

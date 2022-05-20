@@ -29,12 +29,12 @@
       "name": "PLATFORM_TUTOR"
     },
     {
-      "id": 3,
-      "name": "PLATFORM_STUDENT"
-    },
-    {
       "permissionName": "TEST_PERMISSION",
       "id": 4
+    },
+    {
+      "name": "TEST_PERMISSION",
+      "id": 5
     }
   ]
 }

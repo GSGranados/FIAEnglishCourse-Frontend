@@ -9,35 +9,35 @@ import {
 } from "../types";
 
 /*STREAMS ACTIONS */
-const createPermissionsAction = (stream) => {
+const createPermissionsAction = (permission) => {
   return {
     type: CREATE_PERMISSION,
-    payload: stream,
+    payload: permission,
   };
 };
 
-const fetchPermissionsAction = (streams) => {
+const fetchPermissionsAction = (permissions) => {
   return {
     type: FETCH_PERMISSIONS,
-    payload: streams,
+    payload: permissions,
   };
 };
-const fetchPermissionAction = (stream) => {
+const fetchPermissionAction = (permission) => {
   return {
     type: FETCH_PERMISSION,
-    payload: stream,
+    payload: permission,
   };
 };
-const editPermissionAction = (stream) => {
+const editPermissionAction = (permission) => {
   return {
     type: EDIT_PERMISSION,
-    payload: stream,
+    payload: permission,
   };
 };
-const deletePermissionAction = (streamID) => {
+const deletePermissionAction = (permissionID) => {
   return {
     type: DELETE_PERMISSION,
-    payload: streamID,
+    payload: permissionID,
   };
 };
 
@@ -75,7 +75,7 @@ export const editPermission = (permissionID, formValues) => async (dispatch) => 
 };
 //delete one
 export const deletePermission = (permissionID) => async (dispatch) => {
-  await fiaECAPI.delete(`/permissions/${permissionID}`);
+  await fiaECAPI.delete(`/permissions2/${permissionID}`);
   dispatch(deletePermissionAction(permissionID));
   history.push("/permissions");
 };
