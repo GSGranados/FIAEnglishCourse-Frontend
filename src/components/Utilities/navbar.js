@@ -8,6 +8,7 @@ export const Navbar = () => {
     { name: "Tuitions", link: "/" },
     { name: "MOOC Courses", link: "/" },
     { name: "English Courses", link: "/permissions" },
+    { name: "Roles", link: "/roles"},
     { name: "faUserCircle" },
   ];
   const auth = useAuth();
