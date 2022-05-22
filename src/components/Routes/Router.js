@@ -20,7 +20,7 @@ const Router = () => {
     <Routes>
         <Route path="/login" exact element={<LoginPage/>} />
         <Route path="" element={<MainPage/>}>
-          <Route path="/permissions/*" element={<PermissionsPage/>}>
+          <Route path="/permissions/*" exact element={<PermissionsPage/>}>
             <Route path="" exact element={<PermmissionsComponent/>} />
             <Route path="new" exact element={<PermissionsCreate/>} />
             <Route path="edit/:id" exact element={<PermissionsEdit/>} />

@@ -21,10 +21,10 @@ const Modal = (props) => {
           <FontAwesomeIcon icon={faClose} size="xl"/>
           </button>
           <div onClick={e => e.stopPropagation()}  className="py-6 px-6 lg:px-8">
-            <h3 className="mb-4 text-xl font-medium text-gray-text-900">
+            <h3 className="mb-4 text-xl font-medium text-gray-text-900 text-center">
               {props.title}
             </h3>
-            <div className="flex justify-start w-full items-center">
+            <div className="flex justify-start w-full items-center mb-5 text-center">
               {props.content}
             </div>
             <div className="flex items-center justify-center gap-3">
