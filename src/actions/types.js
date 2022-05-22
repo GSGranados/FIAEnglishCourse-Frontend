@@ -5,3 +5,8 @@ export const FETCH_PERMISSION = "FETCH_PERMISSION";
 export const DELETE_PERMISSION = "DELETE_PERMISSION";
 export const EDIT_PERMISSION = "EDIT_PERMISSION";
 /**ROLES ACTION TYPES */
+export const CREATE_ROLE = "CREATE_ROLE";
+export const FETCH_ROLES = "FETCH_ROLES";
+export const FETCH_ROLE = "FETCH_ROLE";
+export const DELETE_ROLE = "DELETE_ROLE";
+export const EDIT_ROLE = "EDIT_ROLE";
