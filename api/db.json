@@ -22,11 +22,11 @@
   "permissions2": [
     {
       "id": 1,
-      "name": "PLATFORM_ADMIN_EDITED"
+      "name": "PLATFORM_what"
     },
     {
       "id": 2,
-      "name": "PLATFORM_TUTOR"
+      "name": "PLATFORM_TUTOR2"
     },
     {
       "id": 3,
@@ -35,6 +35,111 @@
     {
       "permissionName": "TEST_PERMISSION",
       "id": 4
+    }
+  ],
+  "roles": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "CREATE_ROLE"
+      },
+      {
+        "id": 2,
+        "name": "EDIT_ROLE"
+      },
+      {
+        "id": 3,
+        "name": "DELETE_ROLE"
+      },
+      {
+        "id": 4,
+        "name": "GET_ROLE"
+      },
+      {
+        "id": 5,
+        "name": "GET_ROLES"
+      },
+      {
+        "id": 6,
+        "name": "DELETE_ROLES"
+      },
+      {
+        "permissionName": "TEST_PERMISSION",
+        "id": 10,
+        "name": "----TEST----"
+      }
+    ]
+  },
+  "roles2":[
+    [
+      "id",
+      "name"
+    ],
+    [
+      [
+        1,
+        "CREATE_ROLE"
+      ],
+      [
+        2,
+        "EDIT_ROLE"
+      ],
+      [
+        3,
+        "DELETE_ROLE"
+      ],
+      [
+        4,
+        "GET_ROLE"
+      ],
+      [
+        5,
+        "GET_ROLES"
+      ],
+      [
+        6,
+        "DELETE_ROLES"
+      ],
+      [
+        10,
+        "----TEST----",
+        "TEST_PERMISSION"
+      ]
+    ]
+  ],
+  "roles3": [
+    {
+      "id": 1,
+      "name": "CREATE_ROLE"
+    },
+    {
+      "id": 2,
+      "name": "EDIT_ROLE"
+    },
+    {
+      "id": 3,
+      "name": "DELETE_ROLE"
+    },
+    {
+      "id": 4,
+      "name": "GET_ROLE"
+    },
+    {
+      "id": 5,
+      "name": "GET_ROLES"
+    },
+    {
+      "id": 6,
+      "name": "DELETE_ROLES"
+    },
+    {
+      "permissionName": "TEST_PERMISSION",
+      "id": 10,
+      "name": "----TEST----"
     }
   ]
 }

@@ -1,12 +1,19 @@
 import { Route,Routes } from "react-router-dom";
-import PermmissionsComponent  from "../Permissions/PermissionsComponent";
 import React from "react";
-import PermissionsDelete from "../Permissions/PermissionsDelete";
-import PermissionsCreate from "../Permissions/PermissionsCreate";
-import PermissionsEdit from "../Permissions/PermissionsEdit";
 import MainPage from "../../pages/Main/MainPage";
-import PermissionsPage from "../../pages/Permissions/PermissionsPage";
 import LoginPage from "../../pages/Login/LoginPage";
+
+import PermmissionsComponent  from "../Permissions/PermissionsComponent";
+import PermissionsPage from "../../pages/Permissions/PermissionsPage";
+import PermissionsCreate from "../Permissions/PermissionsCreate";
+import PermissionsDelete from "../Permissions/PermissionsDelete";
+import PermissionsEdit from "../Permissions/PermissionsEdit";
+
+import RolesComponent from "../Roles/RolesComponent";
+import RolesPage from "../../pages/Roles/RolesPage";
+import RolesCreate from "../Roles/RolesCreate";
+import RolesDelete from "../Roles/RolesDelete";
+import RolesEdit from "../Roles/RolesEdit";
 
 const Router = () => {
   return (
@@ -18,6 +25,12 @@ const Router = () => {
             <Route path="new" exact element={<PermissionsCreate/>} />
             <Route path="edit/:id" exact element={<PermissionsEdit/>} />
             <Route path="delete/:id" exact element={<PermissionsDelete/>} />
+          </Route>
+          <Route path="/roles/*" element={<RolesPage/>}>
+            <Route path="" exact element={<RolesComponent/>} />
+            <Route path="new" exact element={<RolesCreate/>} />
+            <Route path="edit/:id" exact element={<RolesEdit/>} />
+            <Route path="delete/:id" exact element={<RolesDelete/>} />
           </Route>
         </Route>
     </Routes>

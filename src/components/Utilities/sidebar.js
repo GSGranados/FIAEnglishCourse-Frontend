@@ -14,6 +14,7 @@ export class Sidebar extends Component {
              { title: "MOOC Courses", src: "faBook", link:"/" },
              { title: "English Courses", src: "faFile", link :"/" },
              { title: "User Settings", src: "faUser",link: "/permissions", gap: true },
+             { title: "Roles Settings", src: "faCog", link: "/roles" },
              { title: "Log", src: "faCog", link: "/" },
            ]
         }
