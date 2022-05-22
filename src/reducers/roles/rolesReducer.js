@@ -20,8 +20,8 @@ export const rolesReducer = (state = initialState, action) => {
       console.log("C1");
       console.log(action);
       return { ...state, 
-        roles: action.payload[1],
-        columns: action.payload[0]
+        roles: action.payload,
+        columns: Object.keys(action.payload[0])
       };
     case FETCH_ROLE:
       return { ...state, [action.payload.id]: action.payload };

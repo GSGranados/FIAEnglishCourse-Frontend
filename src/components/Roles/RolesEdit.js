@@ -10,6 +10,7 @@ class RolesEdit extends Component {
     async componentDidMount() {
       const roleId = Number(history.location.pathname.split("/")[3]);
       console.log(roleId);
+      console.log("CD")
       await this.props.fetchRole(roleId);
     }
     
@@ -19,6 +20,7 @@ class RolesEdit extends Component {
       };
 
   render() {
+    console.log("Props");
     console.log(this.props);
     if (false) {
       return <div>Loading...</div>;
@@ -35,9 +37,10 @@ class RolesEdit extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+  console.log("VD");  
+  console.log(state);
     return {
-        role: state.permissions.permissions[Number(history.location.pathname.split("/")[3])],
+        role: state.roles.roles[Number(history.location.pathname.split("/")[3]-1)],
     };
   };
 
