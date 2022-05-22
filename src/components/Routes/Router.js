@@ -1,14 +1,15 @@
 import { Route,Routes } from "react-router-dom";
+import RequireAuth from "./RequireAuth";
 import React from "react";
 import MainPage from "../../pages/Main/MainPage";
 import LoginPage from "../../pages/Login/LoginPage";
-
+/**PERMISSIONS ROUTES */
 import PermmissionsComponent  from "../Permissions/PermissionsComponent";
 import PermissionsPage from "../../pages/Permissions/PermissionsPage";
 import PermissionsCreate from "../Permissions/PermissionsCreate";
 import PermissionsDelete from "../Permissions/PermissionsDelete";
 import PermissionsEdit from "../Permissions/PermissionsEdit";
-
+/**ROLES ROUTES */
 import RolesComponent from "../Roles/RolesComponent";
 import RolesPage from "../../pages/Roles/RolesPage";
 import RolesCreate from "../Roles/RolesCreate";
@@ -19,7 +20,7 @@ const Router = () => {
   return (
     <Routes>
         <Route path="/login" exact element={<LoginPage/>} />
-        <Route path="" element={<MainPage/>}>
+        <Route path="" element={<RequireAuth><MainPage/></RequireAuth>}>
           <Route path="/permissions/*" exact element={<PermissionsPage/>}>
             <Route path="" exact element={<PermmissionsComponent/>} />
             <Route path="new" exact element={<PermissionsCreate/>} />
