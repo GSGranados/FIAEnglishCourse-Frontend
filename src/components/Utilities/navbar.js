@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUserCircle,faBars,faClose,} from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "./auth";
 export const Navbar = () => {
   const links = [
     { name: "Tuitions", link: "/" },
@@ -9,7 +10,10 @@ export const Navbar = () => {
     { name: "English Courses", link: "/permissions" },
     { name: "faUserCircle" },
   ];
+  const auth = useAuth();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+
   const formattedListItems = links.map((item, index) => {
     return (
       <li key={index} className="md:ml-8 text-lg md:my-0 my-7">
@@ -26,11 +30,18 @@ export const Navbar = () => {
       </li>
     );
   });
+
+  const handleLogout = () =>{
+    auth.logout();
+    navigate('/login')
+  }
+
   return (
     <div className="bg-wine-red-600 bg-opacity-90 text-white-text-100 font-bold shadow-md w-full min-h-max py-4 px-10  top-0 left-0">
       <div className="md:flex items-center justify-between">
         <div className="font-bold text-xl cursor-pointer flex items-center">
           FIA English Course
+          {auth.user? (<button className="ml-2 px-3 py-2 bg-green-400 text-white-text-100 rounded-lg" onClick={handleLogout}>Logout</button>): ""}
         </div>
         <div
           className="absolute right-8 top-5 cursor-pointer md:hidden"

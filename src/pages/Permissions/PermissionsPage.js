@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-
+import { Link, Outlet} from "react-router-dom";
 const PermissionsPage = () => {
   return (
     <div className="p-7 text-2xl font-semibold w-full flex-1  h-[calc(100%_-_4rem)]">
