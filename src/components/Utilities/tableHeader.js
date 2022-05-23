@@ -12,7 +12,7 @@ const TableHeader = (props) => {
     <thead className="bg-red-300 border-b-2 text-white-text-100 border-red-400">
       <tr>
         {formattedColumns}
-        <th className="w-[10rem] p-2 text-md font-semibold tracking-wide text-left">
+        <th className="w-[10rem] p-2 text-md font-semibold tracking-wide text-center ">
           Actions
         </th>
       </tr>

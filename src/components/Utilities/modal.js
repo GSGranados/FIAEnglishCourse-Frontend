@@ -24,7 +24,7 @@ const Modal = (props) => {
             <h3 className="mb-4 text-xl font-medium text-gray-text-900 text-center">
               {props.title}
             </h3>
-            <div className="flex justify-start w-full items-center mb-5 text-center">
+            <div className="flex flex-col justify-start w-full items-center mb-5 text-left">
               {props.content}
             </div>
             <div className="flex items-center justify-center gap-3">

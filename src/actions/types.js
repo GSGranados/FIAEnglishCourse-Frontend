@@ -10,3 +10,9 @@ export const FETCH_ROLES = "FETCH_ROLES";
 export const FETCH_ROLE = "FETCH_ROLE";
 export const DELETE_ROLE = "DELETE_ROLE";
 export const EDIT_ROLE = "EDIT_ROLE";
+/**USERS ACTION TYPES */
+export const CREATE_USER = "CREATE_USER";
+export const FETCH_USERS = "FETCH_USERS";
+export const FETCH_USER = "FETCH_USER";
+export const DELETE_USER = "DELETE_USER";
+export const EDIT_USER = "EDIT_USER";

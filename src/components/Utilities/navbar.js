@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUserCircle,faBars,faClose,} from "@fortawesome/free-solid-svg-icons";
+import {faUserCircle,faBars,faClose} from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "./auth";
 export const Navbar = () => {
   const links = [
     { name: "Tuitions", link: "/" },
     { name: "MOOC Courses", link: "/" },
-    { name: "English Courses", link: "/permissions" },
-    { name: "Roles", link: "/roles"},
+    { name: "English Courses", link: "/" },
     { name: "faUserCircle" },
   ];
   const auth = useAuth();
