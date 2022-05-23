@@ -9,34 +9,34 @@ import {
 } from "../types";
 
 /*STREAMS ACTIONS */
-const createRoleAction = (stream) => {
+const createRoleAction = (role) => {
   return {
     type: CREATE_ROLE,
-    payload: stream,
+    payload: role,
   };
 };
-const fetchRoleAction = (stream) => {
+const fetchRoleAction = (role) => {
     return {
       type: FETCH_ROLE,
-      payload: stream,
+      payload: role,
     };
   };
-const fetchRolesAction = (streams) => {
+const fetchRolesAction = (roles) => {
   return {
     type: FETCH_ROLES,
-    payload: streams,
+    payload: roles,
   };
 };
-const editRoleAction = (stream) => {
+const editRoleAction = (role) => {
   return {
     type: EDIT_ROLE,
-    payload: stream,
+    payload: role,
   };
 };
-const deleteRoleAction = (streamID) => {
+const deleteRoleAction = (roleID) => {
   return {
     type: DELETE_ROLE,
-    payload: streamID,
+    payload: roleID,
   };
 };
 
@@ -54,8 +54,6 @@ export const createRole = (formValues) => async (dispatch, getState) => {
 //fetch multiples
 export const fetchRoles = () => async (dispatch) => {
   const response = await fiaECAPI.get("/roles3");
-  console.log("B");
-  console.log(response);
   dispatch(fetchRolesAction(response.data));
 };
 
@@ -64,8 +62,6 @@ export const fetchRole = (roleID) => async (dispatch) => {
   //const response1 = await fiaECAPI.get(`/roles/1`);
   //console.log("B: " + response1);
   const response = await fiaECAPI.get(`/roles3/${roleID}`);
-  console.log("A: ");
-  console.log(response.data);
   dispatch(fetchRoleAction(response.data));
 };
 
