@@ -17,7 +17,6 @@ const initialState = {
 export const rolesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROLES:
-      
       return { ...state, 
         roles: action.payload,
         columns: Object.keys(action.payload[0])
@@ -25,8 +24,6 @@ export const rolesReducer = (state = initialState, action) => {
     case FETCH_ROLE:
       return { ...state, [action.payload.id]: action.payload };
     case CREATE_ROLE:
-      console.log(state);
-      console.log(action.payload);
       return { ...state, [action.payload.id]: action.payload };
     case EDIT_ROLE:
       return { ...state, [action.payload.id]: action.payload };

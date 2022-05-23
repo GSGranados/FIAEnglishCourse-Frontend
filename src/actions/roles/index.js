@@ -59,8 +59,6 @@ export const fetchRoles = () => async (dispatch) => {
 
 //fetch one
 export const fetchRole = (roleID) => async (dispatch) => {
-  //const response1 = await fiaECAPI.get(`/roles/1`);
-  //console.log("B: " + response1);
   const response = await fiaECAPI.get(`/roles3/${roleID}`);
   dispatch(fetchRoleAction(response.data));
 };

@@ -19,7 +19,6 @@ class RolesDelete extends React.Component {
 
   renderActions() {
     const roleId = Number(history.location.pathname.split("/")[3]);
-    console.log(this.props);
     return (
       <React.Fragment>
         <Link
@@ -53,7 +52,6 @@ class RolesDelete extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     role: state.roles.roles[Number(history.location.pathname.split("/")[3]-1)]
   };

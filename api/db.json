@@ -135,6 +135,14 @@
     {
       "id": 6,
       "name": "DELETE_ROLES"
+    },
+    {
+      "name": "MISC_ROLE_1",
+      "id": 7
+    },
+    {
+      "name": "MISC_ROLE_2",
+      "id": 8
     }
   ],
   "users": {
