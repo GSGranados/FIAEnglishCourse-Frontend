@@ -219,5 +219,23 @@
       "is_staff": false,
       "id": 3
     }
+  ],
+  "career": [
+    {
+      "id": 1,
+      "name": "INGENIERÍA EN SISTEMAS INFORMÁTICOS"
+    },
+    {
+      "name": "LICENCIATURA EN CONTADURIA",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "INGENIERÍA MECATRONICA"
+    },
+    {
+      "id": 4,
+      "name": "INGENIERÍA EN SISTEMAS"
+    }
   ]
 }
