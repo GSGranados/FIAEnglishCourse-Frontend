@@ -37,7 +37,80 @@
       "id": 5
     }
   ],
-
+  "roles": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "CREATE_ROLE"
+      },
+      {
+        "id": 2,
+        "name": "EDIT_ROLE"
+      },
+      {
+        "id": 3,
+        "name": "DELETE_ROLE"
+      },
+      {
+        "id": 4,
+        "name": "GET_ROLE"
+      },
+      {
+        "id": 5,
+        "name": "GET_ROLES"
+      },
+      {
+        "id": 6,
+        "name": "DELETE_ROLES"
+      },
+      {
+        "permissionName": "TEST_PERMISSION",
+        "id": 10,
+        "name": "----TEST----"
+      }
+    ]
+  },
+  "roles2": [
+    [
+      "id",
+      "name"
+    ],
+    [
+      [
+        1,
+        "CREATE_ROLE"
+      ],
+      [
+        2,
+        "EDIT_ROLE"
+      ],
+      [
+        3,
+        "DELETE_ROLE"
+      ],
+      [
+        4,
+        "GET_ROLE"
+      ],
+      [
+        5,
+        "GET_ROLES"
+      ],
+      [
+        6,
+        "DELETE_ROLES"
+      ],
+      [
+        10,
+        "----TEST----",
+        "TEST_PERMISSION"
+      ]
+    ]
+  ],
   "roles3": [
     {
       "id": 1,
@@ -62,11 +135,81 @@
     {
       "id": 6,
       "name": "DELETE_ROLES"
+    }
+  ],
+  "users": {
+    "columns": [
+      "Id",
+      "E-mail",
+      "First Name",
+      "Last Name",
+      "Phone Number",
+      "Carnet"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "email": "gc14003@ues.edu.sv",
+        "first_name": "Steven",
+        "last_name": "Granados",
+        "phone_number": "77593611",
+        "carnet": "gc14003"
+      },
+      {
+        "id": 2,
+        "email": "lh15004@ues.edu.sv",
+        "first_name": "Cesar",
+        "last_name": "Lopez",
+        "phone_number": "77593611",
+        "carnet": "lh15004"
+      }
+    ]
+  },
+  "users2": [
+    {
+      "id": 1,
+      "email": "gc14003@ues.edu.sv",
+      "password": "123456",
+      "first_name": "Steven Edited",
+      "last_name": "Granados",
+      "phone_number": "77593611",
+      "created_at": null,
+      "updated_at": null,
+      "profile_picture": null,
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "carnet": "gc14003"
     },
     {
-      "permissionName": "TEST_PERMISSION",
-      "id": 10,
-      "name": "----TEST----"
+      "id": 2,
+      "email": "lh15004@ues.edu.sv",
+      "password": "123456",
+      "first_name": "Cesar",
+      "last_name": "Lopez",
+      "phone_number": "77593611",
+      "created_at": null,
+      "updated_at": null,
+      "profile_picture": null,
+      "is_active": false,
+      "is_superuser": false,
+      "is_staff": false,
+      "carnet": "gc14003"
+    },
+    {
+      "email": "gc14003@ues.edu.sv",
+      "password": "13585",
+      "first_name": "Steven",
+      "last_name": "Granados",
+      "phone_number": "77593611",
+      "carnet": "gc14003",
+      "created_at": "Mon, 23 May 2022 01:36:18 GMT",
+      "updated_at": "Mon, 23 May 2022 01:36:18 GMT",
+      "profile_picture": null,
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "id": 3
     }
   ]
 }
