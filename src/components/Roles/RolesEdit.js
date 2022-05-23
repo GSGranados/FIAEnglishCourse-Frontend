@@ -18,13 +18,7 @@ class RolesEdit extends Component {
   };
 
   render() {
-    const actions = (
-      <>
-        <button className="px-2 py-2 rounded-lg bg-gray-text-300 hover:bg-gray-text-400 transition-all ease-in text-white-text-100 font-medium">Cancel</button>
-        <button className="px-2 py-2 rounded-lg bg-blue-400 hover:bg-blue-600 transition-all ease-in text-white-text-100 font-medium">Modify Role</button>
-      </>
-    )
-    if (false) {
+    if (!this.props.role) {
       return <div>Loading...</div>;
     }
     return (
@@ -36,7 +30,7 @@ class RolesEdit extends Component {
             initialValues={_.pick(this.props.role, "name")}
           />
         }
-        actions={actions}
+        actions={""}
         onDismiss={() => history.push('/roles')}
       />
     )
