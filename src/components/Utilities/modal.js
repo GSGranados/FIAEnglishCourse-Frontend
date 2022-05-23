@@ -16,7 +16,7 @@ const Modal = (props) => {
           <button
             type="button"
             className="absolute top-3 right-2.5 text-gray-text-400 bg-transparent hover:bg-gray-text-200 hover:text-gray-text-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-text-200 "
-            onClick={props.onDismis}
+            onClick={props.onDismiss}
           >
           <FontAwesomeIcon icon={faClose} size="xl"/>
           </button>
@@ -24,7 +24,7 @@ const Modal = (props) => {
             <h3 className="mb-4 text-xl font-medium text-gray-text-900 text-center">
               {props.title}
             </h3>
-            <div className="flex flex-col justify-start w-full items-center mb-5 text-left">
+            <div className="flex flex-col justify-start w-full items-center mb-5 text-center">
               {props.content}
             </div>
             <div className="flex items-center justify-center gap-3">

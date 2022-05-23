@@ -8,7 +8,7 @@ class RolesComponent extends React.Component {
       }
     
       renderTable() {
-      return <Table columns={this.props.columns} records={this.props.roles} editUrl={"edit/"} deleteUrl={"delete/"} />
+        return <Table columns={this.props.columns} records={this.props.roles} editUrl={"edit/"} deleteUrl={"delete/"} />
       }
     
       render() {

@@ -10,7 +10,7 @@ const RolesPage = () => {
           to="new"
           className="bg-green-500 text-[1rem] px-3 py-1 rounded-lg text-white-text-100 hover:bg-green-600 transition-all ease-in duration-200"
         >
-          New Permission
+          New Role
         </Link>
       </div>
       <Outlet />
