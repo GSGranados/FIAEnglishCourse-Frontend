@@ -6,11 +6,9 @@ import {fetchRole, editRole} from "../../actions/roles"
 import Modal from "../Utilities/modal";
 import RolesForm from "./RolesForm";
 class RolesEdit extends Component {
-
+    
     async componentDidMount() {
       const roleId = Number(history.location.pathname.split("/")[3]);
-      console.log(roleId);
-      console.log("CD")
       await this.props.fetchRole(roleId);
     }
     
@@ -20,8 +18,12 @@ class RolesEdit extends Component {
       };
 
   render() {
-    console.log("Props");
-    console.log(this.props);
+    const actions = (
+      <>
+        <button className="px-2 py-2 rounded-lg bg-gray-text-300 hover:bg-gray-text-400 transition-all ease-in text-white-text-100 font-medium">Cancel</button>
+        <button className="px-2 py-2 rounded-lg bg-red-400 hover:bg-red-600 transition-all ease-in text-white-text-100 font-medium">Delete Role</button>
+      </>
+    )
     if (false) {
       return <div>Loading...</div>;
     }
@@ -29,7 +31,7 @@ class RolesEdit extends Component {
       <Modal
         title={"Edit Role"}
         content={<RolesForm onSubmit={this.onSubmit} initialValues={_.pick(this.props.role, "name")}/>}
-        actions={""}
+        actions={actions}
         onDismiss={() => history.push('/roles')}
       />
     )
@@ -37,8 +39,6 @@ class RolesEdit extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("VD");  
-  console.log(state);
     return {
         role: state.roles.roles[Number(history.location.pathname.split("/")[3]-1)],
     };
