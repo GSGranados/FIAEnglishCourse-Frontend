@@ -21,6 +21,12 @@ import UsersComponent from "../Users/UsersComponent";
 import UsersCreate from "../Users/UsersCreate";
 import UsersEdit from "../Users/UsersEdit";
 import UsersDelete from "../Users/UsersDelete";
+/**CAREERS ROUTES */
+import CareersComponent from "../Careers/CareersComponent";
+import CareersPage from "../../pages/Careers/CareersPage";
+import CareersCreate from "../Careers/CareersCreate";
+import CareersDelete from "../Careers/CareersDelete";
+import CareersEdit from "../Careers/CareersEdit";
 
 const Router = () => {
   return (
@@ -45,6 +51,12 @@ const Router = () => {
             <Route path="new" exact element={<UsersCreate/>} />
             <Route path="edit/:id" exact element={<UsersEdit/>} />
             <Route path="delete/:id" exact element={<UsersDelete/>} />
+          </Route>
+          <Route path="/careers/*" element={<CareersPage/>}>
+            <Route path="" exact element={<CareersComponent/>} />
+            <Route path="new" exact element={<CareersCreate/>} />
+            <Route path="edit/:id" exact element={<CareersEdit/>} />
+            <Route path="delete/:id" exact element={<CareersDelete/>} />
           </Route>
         </Route>
     </Routes>

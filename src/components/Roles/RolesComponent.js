@@ -5,15 +5,14 @@ import {fetchRoles} from '../../actions/roles'
 class RolesComponent extends React.Component {
     async componentDidMount() {
         await this.props.fetchRoles();
-      }
-    
-      renderTable() {
+    }
+    renderTable() {
       return <Table columns={this.props.columns} records={this.props.roles} editUrl={"edit/"} deleteUrl={"delete/"} />
-      }
+    }
     
-      render() {
-        return <div>{this.renderTable()}</div>;
-      }
+    render() {
+      return <div>{this.renderTable()}</div>;
+    }
 }
 
 const mapStateToProps = (state) => {

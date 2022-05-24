@@ -15,6 +15,7 @@ export class Sidebar extends Component {
              { title: "English Courses", src: "faFile", link :"/" },
              { title: "Users", src: "faUser", link: "/users" , gap:true},
              { title: "Roles", src: "faCog", link: "/roles" },
+             { title: "Carrers", src: "faCog", link: "/careers" },
              { title: "Permissions", src: "faLock",link: "/permissions"},
              { title: "Log", src: "faCog", link: "/" },
            ]

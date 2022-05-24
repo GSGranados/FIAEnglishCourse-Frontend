@@ -16,3 +16,9 @@ export const FETCH_USERS = "FETCH_USERS";
 export const FETCH_USER = "FETCH_USER";
 export const DELETE_USER = "DELETE_USER";
 export const EDIT_USER = "EDIT_USER";
+/**CAREERS ACTION TYPES */
+export const CREATE_CAREER = "CREATE_CAREER";
+export const FETCH_CAREERS = "FETCH_CAREERS";
+export const FETCH_CAREER = "FETCH_CAREER";
+export const DELETE_CAREER = "DELETE_CAREER";
+export const EDIT_CAREER = "EDIT_CAREER";
