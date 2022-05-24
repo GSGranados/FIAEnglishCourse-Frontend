@@ -27,6 +27,12 @@ import CareersPage from "../../pages/Careers/CareersPage";
 import CareersCreate from "../Careers/CareersCreate";
 import CareersDelete from "../Careers/CareersDelete";
 import CareersEdit from "../Careers/CareersEdit";
+/**EDUCATIONAL_LEVELS ROUTES */
+import EducationalLevelsComponent from "../EducationalLevels/EducationalLevelsComponent";
+import EducationalLevelsPage from "../../pages/EducationalLevels/EducationalLevelsPage";
+import EducationalLevelsCreate from "../EducationalLevels/EducationalLevelsCreate";
+import EducationalLevelsDelete from "../EducationalLevels/EducationalLevelsDelete";
+import EducationalLevelsEdit from "../EducationalLevels/EducationalLevelsEdit";
 
 const Router = () => {
   return (
@@ -57,6 +63,12 @@ const Router = () => {
             <Route path="new" exact element={<CareersCreate/>} />
             <Route path="edit/:id" exact element={<CareersEdit/>} />
             <Route path="delete/:id" exact element={<CareersDelete/>} />
+          </Route>
+          <Route path="/educationallevels/*" element={<EducationalLevelsPage/>}>
+            <Route path="" exact element={<EducationalLevelsComponent/>} />
+            <Route path="new" exact element={<EducationalLevelsCreate/>} />
+            <Route path="edit/:id" exact element={<EducationalLevelsEdit/>} />
+            <Route path="delete/:id" exact element={<EducationalLevelsDelete/>} />
           </Route>
         </Route>
     </Routes>

@@ -2,7 +2,8 @@
   "permissions": {
     "columns": [
       "id",
-      "name"
+      "name",
+      "extra"
     ],
     "data": [
       {
@@ -236,6 +237,33 @@
     {
       "id": 4,
       "name": "INGENIERÍA EN SISTEMAS"
+    }
+  ],
+  "educationalLevels": [
+    {
+      "id": 1,
+      "name": "ISI LV 1",
+      "career_id": 1
+    },
+    {
+      "career_id": 1,
+      "name": "ISI LV 2",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "IEM LV 1",
+      "career_id": 3
+    },
+    {
+      "id": 4,
+      "name": "IES LV 3",
+      "career_id": 4
+    },
+    {
+      "name": "IEM LV 4",
+      "id": 5,
+      "career_id": 3
     }
   ]
 }
