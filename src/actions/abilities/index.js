@@ -65,7 +65,7 @@ export const fetchAbility = (abilityID) => async (dispatch) => {
 //edit one
 export const editAbility = (abilityID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `/abilitys/${abilityID}`,
+    `/abilities/${abilityID}`,
     formValues
   );
   dispatch(editAbilityAction(response.data));
