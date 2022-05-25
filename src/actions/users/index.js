@@ -42,7 +42,6 @@ const deleteUserAction = (userID) => {
 };
 
 //users action creators
-
 //create
 export const createUser = (formValues) => async (dispatch, getState) => {
   const response = await fiaECAPI.post("/users2", {

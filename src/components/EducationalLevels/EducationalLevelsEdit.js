@@ -27,7 +27,7 @@ class EducationalLevelsEdit extends Component {
         content={
           <EducationalLevelsForm 
             onSubmit={this.onSubmit} 
-            initialValues={_.pick(this.props.educationalLevel, "name")}
+            initialValues={_.pick(this.props.educationalLevel, "name", "career_id")}
           />
         }
         actions={""}

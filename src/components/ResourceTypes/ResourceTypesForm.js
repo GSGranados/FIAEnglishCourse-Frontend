@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Field, reduxForm } from "redux-form";
-class TopicsForm extends Component {
+class ResourceTypesForm extends Component {
   renderError({ error, touched }) {
     if (touched && error) {
       return (
@@ -46,22 +46,17 @@ class TopicsForm extends Component {
         <Field
           name="name"
           component={this.renderInput}
-          label={"Topic Name"}
-        />
-        <Field
-          name="educational_level_id"
-          component={this.renderInput}
-          label={"Educational Level Conjoin"}
+          label={"Resource Type Name"}
         />
         <div className="flex justify-between items-center w-full">
           <Link
-            to={"/topics"}
+            to={"/resourcetypes"}
             className="bg-gray-text-200 w-[10rem] rounded-lg text-white-text-100 font-semibold text-center p-2 hover:bg-gray-text-300 transition-all ease-in duration-300"
           >
             Cancel
           </Link>
           <button className=" bg-green-400 w-[10rem] rounded-lg text-white-text-100 font-semibold text-center p-2 hover:bg-green-600 transition-all ease-in duration-300">
-            Save Topic
+            Save Resource Type
           </button>
         </div>
       </form>
@@ -72,13 +67,13 @@ class TopicsForm extends Component {
 const validate = (formValues) => {
   const errors = {};
   if (!formValues.name) {
-    errors.name = "Please, enter a valid Topic name";
+    errors.name = "Please, enter a valid ResourceType name";
   }
 
   return errors;
 };
 
 export default reduxForm({
-  form: "topicForm",
+  form: "resourceTypeForm",
   validate,
-})(TopicsForm);
+})(ResourceTypesForm);

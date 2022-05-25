@@ -27,7 +27,7 @@ class TopicsEdit extends Component {
         content={
           <TopicsForm 
             onSubmit={this.onSubmit} 
-            initialValues={_.pick(this.props.topic, "name")}
+            initialValues={_.pick(this.props.topic, "name", "educational_level_id")}
           />
         }
         actions={""}

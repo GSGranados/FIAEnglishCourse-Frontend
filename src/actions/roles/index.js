@@ -42,9 +42,8 @@ const deleteRoleAction = (roleID) => {
 
 //Roles action creators
 //create
-
 export const createRole = (formValues) => async (dispatch, getState) => {
-  const response = await fiaECAPI.post("/roles3", {
+  const response = await fiaECAPI.post("/roles", {
     ...formValues,
   });
   dispatch(createRoleAction(response.data));
@@ -53,28 +52,29 @@ export const createRole = (formValues) => async (dispatch, getState) => {
 
 //fetch multiples
 export const fetchRoles = () => async (dispatch) => {
-  const response = await fiaECAPI.get("/roles3");
+  const response = await fiaECAPI.get("/roles");
   dispatch(fetchRolesAction(response.data));
 };
 
 //fetch one
 export const fetchRole = (roleID) => async (dispatch) => {
-  const response = await fiaECAPI.get(`/roles3/${roleID}`);
+  const response = await fiaECAPI.get(`/roles/${roleID}`);
   dispatch(fetchRoleAction(response.data));
 };
 
 //edit one
 export const editRole = (roleID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `/roles3/${roleID}`,
+    `/roles/${roleID}`,
     formValues
   );
   dispatch(editRoleAction(response.data));
   history.push("/roles");
 };
+
 //delete one
 export const deleteRole = (roleID) => async (dispatch) => {
-  await fiaECAPI.delete(`/roles3/${roleID}`);
+  await fiaECAPI.delete(`/roles/${roleID}`);
   dispatch(deleteRoleAction(roleID));
   history.push("/roles");
 };

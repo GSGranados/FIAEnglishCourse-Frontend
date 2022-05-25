@@ -42,7 +42,6 @@ const deleteTopicAction = (topicID) => {
 
 //Topics action creators
 //create
-
 export const createTopic = (formValues) => async (dispatch, getState) => {
   const response = await fiaECAPI.post("/topics", {
     ...formValues,
@@ -72,6 +71,7 @@ export const editTopic = (topicID, formValues) => async (dispatch) => {
   dispatch(editTopicAction(response.data));
   history.push("/topics");
 };
+
 //delete one
 export const deleteTopic = (topicID) => async (dispatch) => {
   await fiaECAPI.delete(`/topics/${topicID}`);

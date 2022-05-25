@@ -37,7 +37,7 @@
       "id": 5
     }
   ],
-  "roles3": [
+  "roles": [
     {
       "id": 1,
       "name": "CREATE_ROLE"
@@ -216,6 +216,28 @@
       "name": "Some Test Topic",
       "id": 5,
       "educational_level_id": 3
+    }
+  ],
+  "resourceTypes": [
+    {
+      "id": 1,
+      "name": "PDF"
+    },
+    {
+      "id": 2,
+      "name": "DOC"
+    },
+    {
+      "id": 3,
+      "name": "DOCX"
+    },
+    {
+      "id": 4,
+      "name": "MP4"
+    },
+    {
+      "name": "MP3",
+      "id": 5
     }
   ]
 }

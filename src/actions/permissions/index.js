@@ -42,7 +42,6 @@ const deletePermissionAction = (permissionID) => {
 };
 
 //Permissions action creators
-
 //create
 export const createPermission = (formValues) => async (dispatch, getState) => {
   const response = await fiaECAPI.post("/permissions2", {
@@ -73,6 +72,7 @@ export const editPermission = (permissionID, formValues) => async (dispatch) => 
   dispatch(editPermissionAction(response.data));
   history.push("/permissions");
 };
+
 //delete one
 export const deletePermission = (permissionID) => async (dispatch) => {
   await fiaECAPI.delete(`/permissions2/${permissionID}`);

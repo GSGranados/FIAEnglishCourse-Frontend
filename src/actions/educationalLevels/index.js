@@ -42,7 +42,6 @@ const deleteEducationalLevelAction = (educationalLevelID) => {
 
 //EducationalLevels action creators
 //create
-
 export const createEducationalLevel = (formValues) => async (dispatch, getState) => {
   const response = await fiaECAPI.post("/educationalLevels", {
     ...formValues,

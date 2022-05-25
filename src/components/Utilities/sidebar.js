@@ -18,6 +18,7 @@ export class Sidebar extends Component {
              { title: "Carrers", src: "faCog", link: "/careers" },
              { title: "Educational Levels", src: "faCog", link: "/educationallevels" },
              { title: "Topics", src: "faCog", link: "/topics" },
+             { title: "ResourceTypes", src: "faCog", link: "/resourcetypes" },
              { title: "Permissions", src: "faLock",link: "/permissions"},
              { title: "Log", src: "faCog", link: "/" },
            ]
@@ -36,7 +37,7 @@ export class Sidebar extends Component {
       <div
         className={`${
           open ? "w-72" : "w-20"
-        } p-5 pt-8 duration-300 h-screen bg-wine-red-600 relative tablet:hidden`}
+        } p-5 pt-8 duration-300 h-full bg-wine-red-600 relative tablet:hidden`}
       >
         <MenuIcon
           className={`${
