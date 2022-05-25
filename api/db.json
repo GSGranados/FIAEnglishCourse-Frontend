@@ -190,5 +190,32 @@
       "id": 5,
       "career_id": 3
     }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "name": "Introduction to Software Engi",
+      "educational_level_id": 1
+    },
+    {
+      "educational_level_id": 1,
+      "name": "Advanced to Software Engi",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Scrum Method",
+      "educational_level_id": 2
+    },
+    {
+      "id": 4,
+      "name": "Extreme Programming",
+      "educational_level_id": 3
+    },
+    {
+      "name": "Some Test Topic",
+      "id": 5,
+      "educational_level_id": 3
+    }
   ]
 }

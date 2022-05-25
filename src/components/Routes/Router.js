@@ -33,6 +33,12 @@ import EducationalLevelsPage from "../../pages/EducationalLevels/EducationalLeve
 import EducationalLevelsCreate from "../EducationalLevels/EducationalLevelsCreate";
 import EducationalLevelsDelete from "../EducationalLevels/EducationalLevelsDelete";
 import EducationalLevelsEdit from "../EducationalLevels/EducationalLevelsEdit";
+/**TOPICS ROUTES */
+import TopicsComponent from "../Topics/TopicsComponent";
+import TopicsPage from "../../pages/Topics/TopicsPage";
+import TopicsCreate from "../Topics/TopicsCreate";
+import TopicsDelete from "../Topics/TopicsDelete";
+import TopicsEdit from "../Topics/TopicsEdit";
 
 const Router = () => {
   return (
@@ -69,6 +75,12 @@ const Router = () => {
             <Route path="new" exact element={<EducationalLevelsCreate/>} />
             <Route path="edit/:id" exact element={<EducationalLevelsEdit/>} />
             <Route path="delete/:id" exact element={<EducationalLevelsDelete/>} />
+          </Route>
+          <Route path="/topics/*" element={<TopicsPage/>}>
+            <Route path="" exact element={<TopicsComponent/>} />
+            <Route path="new" exact element={<TopicsCreate/>} />
+            <Route path="edit/:id" exact element={<TopicsEdit/>} />
+            <Route path="delete/:id" exact element={<TopicsDelete/>} />
           </Route>
         </Route>
     </Routes>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Field, reduxForm } from "redux-form";
-class EducationalLevelsForm extends Component {
+class TopicsForm extends Component {
   renderError({ error, touched }) {
     if (touched && error) {
       return (
@@ -38,6 +38,8 @@ class EducationalLevelsForm extends Component {
 
   render() {
     const { handleSubmit } = this.props;
+    console.log(this
+    );
     return (
       <form
         onSubmit={handleSubmit(this.onSubmit)}
@@ -46,22 +48,22 @@ class EducationalLevelsForm extends Component {
         <Field
           name="name"
           component={this.renderInput}
-          label={"Educational Level Name"}
+          label={"Topic Name"}
         />
         <Field
-          name="career_id"
+          name="educational_level_id"
           component={this.renderInput}
           label={"Educational Level Conjoin"}
         />
         <div className="flex justify-between items-center w-full">
           <Link
-            to={"/educationallevels"}
+            to={"/topics"}
             className="bg-gray-text-200 w-[10rem] rounded-lg text-white-text-100 font-semibold text-center p-2 hover:bg-gray-text-300 transition-all ease-in duration-300"
           >
             Cancel
           </Link>
           <button className=" bg-green-400 w-[10rem] rounded-lg text-white-text-100 font-semibold text-center p-2 hover:bg-green-600 transition-all ease-in duration-300">
-            Save Educational Level
+            Save Topic
           </button>
         </div>
       </form>
@@ -71,14 +73,14 @@ class EducationalLevelsForm extends Component {
 
 const validate = (formValues) => {
   const errors = {};
-  if (!formValues.name && !formValues.career_id) {
-    errors.name = "Please, enter a valid Educational Level name";
+  if (!formValues.name) {
+    errors.name = "Please, enter a valid Topic name";
   }
 
   return errors;
 };
 
 export default reduxForm({
-  form: "educationalLevelForm",
+  form: "topicForm",
   validate,
-})(EducationalLevelsForm);
+})(TopicsForm);
