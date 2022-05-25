@@ -27,7 +27,7 @@ import CareersPage from "../../pages/Careers/CareersPage";
 import CareersCreate from "../Careers/CareersCreate";
 import CareersDelete from "../Careers/CareersDelete";
 import CareersEdit from "../Careers/CareersEdit";
-/**EDUCATIONAL_LEVELS ROUTES */
+/**EDUCATIONAL LEVELS ROUTES */
 import EducationalLevelsComponent from "../EducationalLevels/EducationalLevelsComponent";
 import EducationalLevelsPage from "../../pages/EducationalLevels/EducationalLevelsPage";
 import EducationalLevelsCreate from "../EducationalLevels/EducationalLevelsCreate";
@@ -39,12 +39,12 @@ import TopicsPage from "../../pages/Topics/TopicsPage";
 import TopicsCreate from "../Topics/TopicsCreate";
 import TopicsDelete from "../Topics/TopicsDelete";
 import TopicsEdit from "../Topics/TopicsEdit";
-/**RESOURCE TYPES ROUTES */
-import ResourceTypesComponent from "../ResourceTypes/ResourceTypesComponent";
-import ResourceTypesPage from "../../pages/ResourceTypes/ResourceTypesPage";
-import ResourceTypesCreate from "../ResourceTypes/ResourceTypesCreate";
-import ResourceTypesDelete from "../ResourceTypes/ResourceTypesDelete";
-import ResourceTypesEdit from "../ResourceTypes/ResourceTypesEdit";
+/**EDUCATIONAL RESOURCES ROUTES */
+import EducationalResourcesComponent from "../EducationalResources/EducationalResourcesComponent";
+import EducationalResourcesPage from "../../pages/EducationalResources/EducationalResourcesPage";
+import EducationalResourcesCreate from "../EducationalResources/EducationalResourcesCreate";
+import EducationalResourcesDelete from "../EducationalResources/EducationalResourcesDelete";
+import EducationalResourcesEdit from "../EducationalResources/EducationalResourcesEdit";
 
 const Router = () => {
   return (
@@ -88,11 +88,11 @@ const Router = () => {
             <Route path="edit/:id" exact element={<TopicsEdit/>} />
             <Route path="delete/:id" exact element={<TopicsDelete/>} />
           </Route>
-          <Route path="/resourcetypes/*" element={<ResourceTypesPage/>}>
-            <Route path="" exact element={<ResourceTypesComponent/>} />
-            <Route path="new" exact element={<ResourceTypesCreate/>} />
-            <Route path="edit/:id" exact element={<ResourceTypesEdit/>} />
-            <Route path="delete/:id" exact element={<ResourceTypesDelete/>} />
+          <Route path="/educationalresources/*" element={<EducationalResourcesPage/>}>
+            <Route path="" exact element={<EducationalResourcesComponent/>} />
+            <Route path="new" exact element={<EducationalResourcesCreate/>} />
+            <Route path="edit/:id" exact element={<EducationalResourcesEdit/>} />
+            <Route path="delete/:id" exact element={<EducationalResourcesDelete/>} />
           </Route>
         </Route>
     </Routes>
@@ -100,3 +100,5 @@ const Router = () => {
 };
 
 export default Router;
+
+

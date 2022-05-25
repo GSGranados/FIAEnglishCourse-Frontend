@@ -239,5 +239,43 @@
       "name": "MP3",
       "id": 5
     }
+  ],
+  "educationalResources": [
+    {
+      "id": 1,
+      "name": "Cuento de la cegura",
+      "topic_id": 1,
+      "resource_type_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Ensayo sobre la cigueña",
+      "topic_id": 1,
+      "resource_type_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Cloud computing Tercera edicion",
+      "topic_id": 2,
+      "resource_type_id": 4
+    },
+    {
+      "id": 4,
+      "name": "Guia de Trabajo 3",
+      "topic_id": 3,
+      "resource_type_id": 4
+    },
+    {
+      "name": "Node Survival Guide",
+      "topic_id": "2",
+      "resource_type_id": "1",
+      "id": 6
+    },
+    {
+      "name": "El Gato de los Baskerville.",
+      "topic_id": "2",
+      "resource_type_id": "3",
+      "id": 7
+    }
   ]
 }
