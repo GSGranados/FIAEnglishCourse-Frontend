@@ -18,6 +18,7 @@ export class Sidebar extends Component {
              { title: "Carrers", src: "faCog", link: "/careers" },
              { title: "Educational Levels", src: "faCog", link: "/educationallevels" },
              { title: "Topics", src: "faCog", link: "/topics" },
+             { title: "Abilities", src: "faCog", link: "/abilities" },
              { title: "Educational Resource", src: "faCog", link: "/educationalresources" },
              { title: "Permissions", src: "faLock",link: "/permissions"},
              { title: "Log", src: "faCog", link: "/" },

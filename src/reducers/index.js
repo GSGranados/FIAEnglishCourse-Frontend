@@ -7,6 +7,7 @@ import { educationalLevelsReducer } from './educationalLevels/educationalLevelsR
 import { topicsReducer } from './topics/topicsReducer';
 import { resourceTypesReducer } from './resourceTypes/resourceTypesReducer';
 import { educationalResourcesReducer } from './educationalResources/eduactionalResourcesReducer';
+import { abilitiesReducer } from './abilities/abilitiesReducer';
 import { usersReducer } from './users/usersReducer';
 import { reducer as formReducer } from "redux-form";
 import loginReducer from "./login/loginReducer";
@@ -19,6 +20,7 @@ export default combineReducers({
    topics: topicsReducer,
    resourceTypes: resourceTypesReducer,
    educationalResources:  educationalResourcesReducer,
+   abilities: abilitiesReducer,
    users: usersReducer,
    form: formReducer
 })

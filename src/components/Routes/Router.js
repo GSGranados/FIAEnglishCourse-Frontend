@@ -45,6 +45,12 @@ import EducationalResourcesPage from "../../pages/EducationalResources/Education
 import EducationalResourcesCreate from "../EducationalResources/EducationalResourcesCreate";
 import EducationalResourcesDelete from "../EducationalResources/EducationalResourcesDelete";
 import EducationalResourcesEdit from "../EducationalResources/EducationalResourcesEdit";
+/**ABILITIES ROUTES */
+import AbilitiesComponent from "../Abilities/AbilitiesComponent";
+import AbilitiesPage from "../../pages/Abilities/AbilitiesPage";
+import AbilitiesCreate from "../Abilities/AbilitiesCreate";
+import AbilitiesDelete from "../Abilities/AbilitiesDelete";
+import AbilitiesEdit from "../Abilities/AbilitiesEdit";
 
 const Router = () => {
   return (
@@ -93,6 +99,12 @@ const Router = () => {
             <Route path="new" exact element={<EducationalResourcesCreate/>} />
             <Route path="edit/:id" exact element={<EducationalResourcesEdit/>} />
             <Route path="delete/:id" exact element={<EducationalResourcesDelete/>} />
+          </Route>
+          <Route path="/abilities/*" element={<AbilitiesPage/>}>
+            <Route path="" exact element={<AbilitiesComponent/>} />
+            <Route path="new" exact element={<AbilitiesCreate/>} />
+            <Route path="edit/:id" exact element={<AbilitiesEdit/>} />
+            <Route path="delete/:id" exact element={<AbilitiesDelete/>} />
           </Route>
         </Route>
     </Routes>

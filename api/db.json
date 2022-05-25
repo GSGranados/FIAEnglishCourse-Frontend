@@ -277,5 +277,27 @@
       "resource_type_id": "3",
       "id": 7
     }
+  ],
+  "abilities": [
+    {
+      "id": 1,
+      "name": "Comunication"
+    },
+    {
+      "id": 2,
+      "name": "Writing"
+    },
+    {
+      "id": 3,
+      "name": "Multi - Lingual"
+    },
+    {
+      "id": 4,
+      "name": "Speaking"
+    },
+    {
+      "name": "Ale",
+      "id": 5
+    }
   ]
 }
