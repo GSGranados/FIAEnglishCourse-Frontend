@@ -5,12 +5,12 @@ import { rolesReducer } from './roles/rolesReducer'
 import { careersReducer } from './careers/careersReducer';
 import { usersReducer } from './users/usersReducer';
 import { reducer as formReducer } from "redux-form";
-import loginReducer from "./login/loginReducer";
+import {calendarReducer} from './calendar/calendarReducer';
 export default combineReducers({
-   login: loginReducer,
    permissions: permissionsReducer,
    roles: rolesReducer,
    careers: careersReducer,
    users: usersReducer,
-   form: formReducer
+   form: formReducer,
+   calendar: calendarReducer,
 })
