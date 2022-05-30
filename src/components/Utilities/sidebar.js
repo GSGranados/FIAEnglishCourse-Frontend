@@ -23,6 +23,7 @@ export class Sidebar extends Component {
              { title: "Abilities", src: "faCog", link: "/abilities" },
              { title: "TutorReviewCriteria", src: "faCog", link: "/tutorreviewcriteria" },
              { title: "Permissions", src: "faLock",link: "/permissions"},
+             { title: "Tuitions", src: "faCalendar",link: "/tuitions"},
              { title: "Log", src: "faCog", link: "/" },
            ]
         }

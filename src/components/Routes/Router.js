@@ -64,6 +64,10 @@ import TutorReviewCriteriaCreate from "../TutorReviewCriteria/TutorReviewCriteri
 import TutorReviewCriteriaDelete from "../TutorReviewCriteria/TutorReviewCriteriaDelete";
 import TutorReviewCriteriaEdit from "../TutorReviewCriteria/TutorReviewCriteriaEdit";
 
+/**RESERVATION ROUTES */
+import TuitionsPage from "../../pages/Tuitions/TuitionsPage";
+import TuitionsList from "../Tuitions/TuitionsList";
+
 const Router = () => {
   return (
     <Routes>
@@ -129,6 +133,9 @@ const Router = () => {
             <Route path="new" exact element={<TutorReviewCriteriaCreate/>} />
             <Route path="edit/:id" exact element={<TutorReviewCriteriaEdit/>} />
             <Route path="delete/:id" exact element={<TutorReviewCriteriaDelete/>} />
+          </Route>
+          <Route path="/tuitions/*" element={<TuitionsPage/>}>
+            <Route path="" exact element={<TuitionsList/>} />
           </Route>
         </Route>
     </Routes>

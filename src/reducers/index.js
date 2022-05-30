@@ -11,9 +11,8 @@ import { abilitiesReducer } from './abilities/abilitiesReducer';
 import { tutorReviewCriteriaReducer } from './tutorReviewCriteria/tutorReviewCriteriaReducer';
 import { usersReducer } from './users/usersReducer';
 import { reducer as formReducer } from "redux-form";
-import loginReducer from "./login/loginReducer";
+import {calendarReducer} from './calendar/calendarReducer';
 export default combineReducers({
-   login: loginReducer,
    permissions: permissionsReducer,
    roles: rolesReducer,
    careers: careersReducer,
@@ -24,5 +23,6 @@ export default combineReducers({
    abilities: abilitiesReducer,
    tutorReviewCriteria: tutorReviewCriteriaReducer,
    users: usersReducer,
-   form: formReducer
+   form: formReducer,
+   calendar: calendarReducer,
 })
