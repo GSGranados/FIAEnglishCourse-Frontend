@@ -8,6 +8,7 @@ import { topicsReducer } from './topics/topicsReducer';
 import { resourceTypesReducer } from './resourceTypes/resourceTypesReducer';
 import { educationalResourcesReducer } from './educationalResources/eduactionalResourcesReducer';
 import { abilitiesReducer } from './abilities/abilitiesReducer';
+import { tutorReviewCriteriaReducer } from './tutorReviewCriteria/tutorReviewCriteriaReducer';
 import { usersReducer } from './users/usersReducer';
 import { reducer as formReducer } from "redux-form";
 import loginReducer from "./login/loginReducer";
@@ -21,6 +22,7 @@ export default combineReducers({
    resourceTypes: resourceTypesReducer,
    educationalResources:  educationalResourcesReducer,
    abilities: abilitiesReducer,
+   tutorReviewCriteria: tutorReviewCriteriaReducer,
    users: usersReducer,
    form: formReducer
 })

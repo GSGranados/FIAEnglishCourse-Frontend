@@ -299,5 +299,41 @@
       "name": "Ale",
       "id": 5
     }
+  ],
+  "tutorReviewCriteria": [
+    {
+      "id": 1,
+      "name": "Rev: Comunication",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Rev: Writing",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Rev: Punctuality",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "name": "Rev: Speaking",
+      "isActive": true
+    },
+    {
+      "name": "Rev: Ale",
+      "id": 6,
+      "isActive": false
+    },
+    {
+      "name": "Rev: Presentation",
+      "id": 7,
+      "isActive": true
+    },
+    {
+      "name": "Rev: Delete",
+      "id": 8
+    }
   ]
 }
