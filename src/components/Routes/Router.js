@@ -28,6 +28,10 @@ import CareersCreate from "../Careers/CareersCreate";
 import CareersDelete from "../Careers/CareersDelete";
 import CareersEdit from "../Careers/CareersEdit";
 
+/**RESERVATION ROUTES */
+import TuitionsPage from "../../pages/Tuitions/TuitionsPage";
+import TuitionsList from "../Tuitions/TuitionsList";
+
 const Router = () => {
   return (
     <Routes>
@@ -57,6 +61,9 @@ const Router = () => {
             <Route path="new" exact element={<CareersCreate/>} />
             <Route path="edit/:id" exact element={<CareersEdit/>} />
             <Route path="delete/:id" exact element={<CareersDelete/>} />
+          </Route>
+          <Route path="/tuitions/*" element={<TuitionsPage/>}>
+            <Route path="" exact element={<TuitionsList/>} />
           </Route>
         </Route>
     </Routes>

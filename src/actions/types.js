@@ -22,3 +22,13 @@ export const FETCH_CAREERS = "FETCH_CAREERS";
 export const FETCH_CAREER = "FETCH_CAREER";
 export const DELETE_CAREER = "DELETE_CAREER";
 export const EDIT_CAREER = "EDIT_CAREER";
+/**CALENDAR ACTION TYPES */
+export const GET_MONTH = "GET_MONTH"
+export const NEXT_MONTH = "NEXT_MONTH";
+export const PREV_MONTH = "NEXT_MONTH";
+
+export const CREATE_EVENT ="CREATE_EVENT";
+export const FETCH_EVENTS ="FETCH_EVENTS";
+export const FETCH_EVENT ="FETCH_EVENT";
+export const DELETE_EVENT ="DELETE_EVENT";
+export const EDIT_EVENT ="EDIT_EVENT";
