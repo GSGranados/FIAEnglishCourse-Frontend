@@ -18,8 +18,9 @@ export const permissionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_PERMISSIONS:
       return { ...state, 
-        permissions: action.payload.data,
-        columns: action.payload.columns
+        permissions: action.payload,
+        columns: Object.keys(action.payload[0])
+        //columns: action.payload.columns
       };
     case FETCH_PERMISSION:
       return { ...state, [action.payload.id]: action.payload };

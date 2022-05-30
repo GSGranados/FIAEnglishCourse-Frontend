@@ -53,7 +53,7 @@ class TopicsDelete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    role: state.topics.topics[Number(history.location.pathname.split("/")[3]-1)]
+    role: state.topics[Number(history.location.pathname.split("/")[3])]
   };
 };
 

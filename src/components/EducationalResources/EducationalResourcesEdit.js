@@ -39,7 +39,7 @@ class EducationalResourcesEdit extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      educationalResource: state.educationalResources.educationalResources[Number(history.location.pathname.split("/")[3]-1)],
+      educationalResource: state.educationalResources[Number(history.location.pathname.split("/")[3])],
   };
 };
 

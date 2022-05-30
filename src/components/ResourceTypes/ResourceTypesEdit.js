@@ -39,7 +39,7 @@ class ResourceTypesEdit extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      resourceType: state.resourceTypes.resourceTypes[Number(history.location.pathname.split("/")[3]-1)],
+      resourceType: state.resourceTypes[Number(history.location.pathname.split("/")[3])],
   };
 };
 

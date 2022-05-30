@@ -22,18 +22,18 @@
   "permissions2": [
     {
       "id": 1,
-      "name": "PLATFORM_what"
+      "name": "PLATFORM_ADMIN"
     },
     {
       "id": 2,
       "name": "PLATFORM_TUTOR2"
     },
     {
-      "permissionName": "TEST_PERMISSION",
+      "name": "PLATFORM_STUDENT",
       "id": 4
     },
     {
-      "name": "TEST_PERMISSION",
+      "name": "TEST_PERMISSION102",
       "id": 5
     }
   ],

@@ -34,7 +34,7 @@ class PermissionsEdit extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        permission: state.permissions.permissions[Number(history.location.pathname.split("/")[3])-1],
+        permission: state.permissions[Number(history.location.pathname.split("/")[3])],
     };
   };
 

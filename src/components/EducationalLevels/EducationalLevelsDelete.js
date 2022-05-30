@@ -53,7 +53,7 @@ class EducationalLevelsDelete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    educationalLevel: state.educationalLevels.educationalLevels[Number(history.location.pathname.split("/")[3]-1)]
+    educationalLevel: state.educationalLevels[Number(history.location.pathname.split("/")[3])]
   };
 };
 
