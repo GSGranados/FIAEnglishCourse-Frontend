@@ -42,7 +42,6 @@ const deleteCareerAction = (careerID) => {
 
 //Careers action creators
 //create
-
 export const createCareer = (formValues) => async (dispatch, getState) => {
   const response = await fiaECAPI.post("career", {
     ...formValues,
@@ -72,6 +71,7 @@ export const editCareer = (careerID, formValues) => async (dispatch) => {
   dispatch(editCareerAction(response.data));
   history.push("/careers");
 };
+
 //delete one
 export const deleteCareer = (careerID) => async (dispatch) => {
   await fiaECAPI.delete(`career/${careerID}`);

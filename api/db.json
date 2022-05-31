@@ -22,96 +22,22 @@
   "permissions2": [
     {
       "id": 1,
-      "name": "PLATFORM_what"
+      "name": "PLATFORM_ADMIN"
     },
     {
       "id": 2,
       "name": "PLATFORM_TUTOR2"
     },
     {
-      "permissionName": "TEST_PERMISSION",
+      "name": "PLATFORM_STUDENT",
       "id": 4
     },
     {
-      "name": "TEST_PERMISSION",
+      "name": "TEST_PERMISSION102",
       "id": 5
     }
   ],
-  "roles": {
-    "columns": [
-      "id",
-      "name"
-    ],
-    "data": [
-      {
-        "id": 1,
-        "name": "CREATE_ROLE"
-      },
-      {
-        "id": 2,
-        "name": "EDIT_ROLE"
-      },
-      {
-        "id": 3,
-        "name": "DELETE_ROLE"
-      },
-      {
-        "id": 4,
-        "name": "GET_ROLE"
-      },
-      {
-        "id": 5,
-        "name": "GET_ROLES"
-      },
-      {
-        "id": 6,
-        "name": "DELETE_ROLES"
-      },
-      {
-        "permissionName": "TEST_PERMISSION",
-        "id": 10,
-        "name": "----TEST----"
-      }
-    ]
-  },
-  "roles2": [
-    [
-      "id",
-      "name"
-    ],
-    [
-      [
-        1,
-        "CREATE_ROLE"
-      ],
-      [
-        2,
-        "EDIT_ROLE"
-      ],
-      [
-        3,
-        "DELETE_ROLE"
-      ],
-      [
-        4,
-        "GET_ROLE"
-      ],
-      [
-        5,
-        "GET_ROLES"
-      ],
-      [
-        6,
-        "DELETE_ROLES"
-      ],
-      [
-        10,
-        "----TEST----",
-        "TEST_PERMISSION"
-      ]
-    ]
-  ],
-  "roles3": [
+  "roles": [
     {
       "id": 1,
       "name": "CREATE_ROLE"
@@ -236,6 +162,178 @@
     {
       "id": 4,
       "name": "INGENIERÍA EN SISTEMAS"
+    }
+  ],
+  "educationalLevels": [
+    {
+      "id": 1,
+      "name": "ISI LV 1",
+      "career_id": 1
+    },
+    {
+      "career_id": 1,
+      "name": "ISI LV 2",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "IEM LV 1",
+      "career_id": 3
+    },
+    {
+      "id": 4,
+      "name": "IES LV 3",
+      "career_id": 4
+    },
+    {
+      "name": "IEM LV 4",
+      "id": 5,
+      "career_id": 3
+    }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "name": "Introduction to Software Engi",
+      "educational_level_id": 1
+    },
+    {
+      "educational_level_id": 1,
+      "name": "Advanced to Software Engi",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Scrum Method",
+      "educational_level_id": 2
+    },
+    {
+      "id": 4,
+      "name": "Extreme Programming",
+      "educational_level_id": 3
+    },
+    {
+      "name": "Some Test Topic",
+      "id": 5,
+      "educational_level_id": 3
+    }
+  ],
+  "resourceTypes": [
+    {
+      "id": 1,
+      "name": "PDF"
+    },
+    {
+      "id": 2,
+      "name": "DOC"
+    },
+    {
+      "id": 3,
+      "name": "DOCX"
+    },
+    {
+      "id": 4,
+      "name": "MP4"
+    },
+    {
+      "name": "MP3",
+      "id": 5
+    }
+  ],
+  "educationalResources": [
+    {
+      "id": 1,
+      "name": "Cuento de la cegura",
+      "topic_id": 1,
+      "resource_type_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Ensayo sobre la cigueña",
+      "topic_id": 1,
+      "resource_type_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Cloud computing Tercera edicion",
+      "topic_id": 2,
+      "resource_type_id": 4
+    },
+    {
+      "id": 4,
+      "name": "Guia de Trabajo 3",
+      "topic_id": 3,
+      "resource_type_id": 4
+    },
+    {
+      "name": "Node Survival Guide",
+      "topic_id": "2",
+      "resource_type_id": "1",
+      "id": 6
+    },
+    {
+      "name": "El Gato de los Baskerville.",
+      "topic_id": "2",
+      "resource_type_id": "3",
+      "id": 7
+    }
+  ],
+  "abilities": [
+    {
+      "id": 1,
+      "name": "Comunication"
+    },
+    {
+      "id": 2,
+      "name": "Writing"
+    },
+    {
+      "id": 3,
+      "name": "Multi - Lingual"
+    },
+    {
+      "id": 4,
+      "name": "Speaking"
+    },
+    {
+      "name": "Ale",
+      "id": 5
+    }
+  ],
+  "tutorReviewCriteria": [
+    {
+      "id": 1,
+      "name": "Rev: Comunication",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Rev: Writing",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Rev: Punctuality",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "name": "Rev: Speaking",
+      "isActive": true
+    },
+    {
+      "name": "Rev: Ale",
+      "id": 6,
+      "isActive": false
+    },
+    {
+      "name": "Rev: Presentation",
+      "id": 7,
+      "isActive": true
+    },
+    {
+      "name": "Rev: Delete",
+      "id": 8
     }
   ],
   "tuitions": [

@@ -16,6 +16,12 @@ export class Sidebar extends Component {
              { title: "Users", src: "faUser", link: "/users" , gap:true},
              { title: "Roles", src: "faCog", link: "/roles" },
              { title: "Carrers", src: "faCog", link: "/careers" },
+             { title: "Educational Levels", src: "faCog", link: "/educationallevels" },
+             { title: "Topics", src: "faCog", link: "/topics" },
+             { title: "ResourceType", src: "faCog", link: "/resourcetypes" },
+             { title: "Educational Resource", src: "faCog", link: "/educationalresources" },
+             { title: "Abilities", src: "faCog", link: "/abilities" },
+             { title: "TutorReviewCriteria", src: "faCog", link: "/tutorreviewcriteria" },
              { title: "Permissions", src: "faLock",link: "/permissions"},
              { title: "Tuitions", src: "faCalendar",link: "/tuitions"},
              { title: "Log", src: "faCog", link: "/" },
@@ -35,7 +41,7 @@ export class Sidebar extends Component {
       <div
         className={`${
           open ? "w-72" : "w-20"
-        } p-5 pt-8 duration-300 h-screen bg-wine-red-600 relative tablet:hidden`}
+        } p-5 pt-8 duration-300 h-full bg-wine-red-600 relative tablet:hidden`}
       >
         <MenuIcon
           className={`${
