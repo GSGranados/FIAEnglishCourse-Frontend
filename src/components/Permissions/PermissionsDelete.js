@@ -53,10 +53,10 @@ class PermissionsDelete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    permission:
-      state.permissions[
-        Number(history.location.pathname.split("/")[3])
-      ],
+    permission: state.permissions.permissions.find(
+      (permission) =>
+        permission.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

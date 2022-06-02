@@ -39,7 +39,10 @@ class CareersEdit extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      career: state.careers[Number(history.location.pathname.split("/")[3])],
+    career: state.careers.careers.find(
+      (career) =>
+        career.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

@@ -1,5 +1,4 @@
 import fiaECAPI from "../../helpers/apiHelper";
-import history from "../../history";
 import {
   NEXT_MONTH,
   PREV_MONTH,
@@ -82,6 +81,6 @@ export const editEvent = (eventID, formValues) => async (dispatch) => {
 export const deleteEvent = (careerID) => async (dispatch) => {
   await fiaECAPI.delete(`tuitions/${careerID}`);
   dispatch(deleteEventAction(careerID));
-  history.push("/tuitions")
+  fetchEvents();
 
 };

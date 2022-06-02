@@ -1,4 +1,3 @@
-import _ from "lodash";
 import {
   CREATE_CAREER,
   FETCH_CAREER,
@@ -11,25 +10,36 @@ const initialState = {
   isLoading: false,
   careers: [],
   columns: [],
-  error: null
-}
+  error: null,
+};
 
 export const careersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CAREERS:
-      return { ...state, 
-        careers: action.payload,
-        columns: Object.keys(action.payload[0])
+      return {
+        ...state,
+        careers: action.payload.data,
+        columns: action.payload.columns,
       };
     case FETCH_CAREER:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, carrers: [action.payload, ...state.careers] };
     case CREATE_CAREER:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, carrers: [action.payload, ...state.careers] };
     case EDIT_CAREER:
-      return { ...state, [action.payload.id]: action.payload };
+      const careerIndex = state.careers.findIndex(
+        (career) => career.id === action.payload.id
+      );
+      const newCareersArray = [...state.careers];
+      newCareersArray[careerIndex] = action.payload;
+      return { ...state, careers: newCareersArray };
     case DELETE_CAREER:
-      return _.omit(state, action.payload);
+      return {
+        ...state,
+        careers: state.careers.filter(
+          (career) => career.id !== action.payload.id
+        ),
+      };
     default:
       return state;
   }
-}
+};

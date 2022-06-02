@@ -53,7 +53,7 @@ export const createPermission = (formValues) => async (dispatch, getState) => {
 
 //fetch multiples
 export const fetchPermissions = () => async (dispatch) => {
-  const response = await fiaECAPI.get("/permissions2");
+  const response = await fiaECAPI.get("/permissions");
   dispatch(fetchPermissionsAction(response.data));
 };
 

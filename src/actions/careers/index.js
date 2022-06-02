@@ -43,7 +43,7 @@ const deleteCareerAction = (careerID) => {
 //Careers action creators
 //create
 export const createCareer = (formValues) => async (dispatch, getState) => {
-  const response = await fiaECAPI.post("career", {
+  const response = await fiaECAPI.post("career2", {
     ...formValues,
   });
   dispatch(createCareerAction(response.data));
@@ -58,14 +58,14 @@ export const fetchCareers = () => async (dispatch) => {
 
 //fetch one
 export const fetchCareer = (careerID) => async (dispatch) => {
-  const response = await fiaECAPI.get(`career/${careerID}`);
+  const response = await fiaECAPI.get(`career2/${careerID}`);
   dispatch(fetchCareerAction(response.data));
 };
 
 //edit one
 export const editCareer = (careerID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `career/${careerID}`,
+    `career2/${careerID}`,
     formValues
   );
   dispatch(editCareerAction(response.data));
@@ -74,7 +74,7 @@ export const editCareer = (careerID, formValues) => async (dispatch) => {
 
 //delete one
 export const deleteCareer = (careerID) => async (dispatch) => {
-  await fiaECAPI.delete(`career/${careerID}`);
+  await fiaECAPI.delete(`career2/${careerID}`);
   dispatch(deleteCareerAction(careerID));
   history.push("/careers");
 };
