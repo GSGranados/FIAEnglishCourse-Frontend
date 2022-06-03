@@ -43,7 +43,7 @@ const deleteTutorReviewCriteriaAction = (tutorReviewCriteriaID) => {
 //Tutor Review Criteria action creators
 //create
 export const createTutorReviewCriteria = (formValues) => async (dispatch, getState) => {
-  const response = await fiaECAPI.post("/tutorReviewCriteria", {
+  const response = await fiaECAPI.post("/tutorReviewCriteria2", {
     ...formValues,
   });
   dispatch(createTutorReviewCriteriaAction(response.data));
@@ -58,14 +58,14 @@ export const fetchMultipleTutorReviewCriteria = () => async (dispatch) => {
 
 //fetch one
 export const fetchTutorReviewCriteria = (tutorReviewCriteriaID) => async (dispatch) => {
-  const response = await fiaECAPI.get(`/tutorReviewCriteria/${tutorReviewCriteriaID}`);
+  const response = await fiaECAPI.get(`/tutorReviewCriteria2/${tutorReviewCriteriaID}`);
   dispatch(fetchTutorReviewCriteriaAction(response.data));
 };
 
 //edit one
 export const editTutorReviewCriteria = (tutorReviewCriteriaID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `/tutorReviewCriteria/${tutorReviewCriteriaID}`,
+    `/tutorReviewCriteria2/${tutorReviewCriteriaID}`,
     formValues
   );
   dispatch(editTutorReviewCriteriaAction(response.data));
@@ -74,7 +74,7 @@ export const editTutorReviewCriteria = (tutorReviewCriteriaID, formValues) => as
 
 //delete one
 export const deleteTutorReviewCriteria = (tutorReviewCriteriaID) => async (dispatch) => {
-  await fiaECAPI.delete(`/tutorReviewCriteria/${tutorReviewCriteriaID}`);
+  await fiaECAPI.delete(`/tutorReviewCriteria2/${tutorReviewCriteriaID}`);
   dispatch(deleteTutorReviewCriteriaAction(tutorReviewCriteriaID));
   history.push("/tutorreviewcriteria");
 };

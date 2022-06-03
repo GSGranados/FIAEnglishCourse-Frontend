@@ -1,4 +1,3 @@
-import _ from "lodash";
 import {
   CREATE_TOPIC,
   FETCH_TOPIC,
@@ -18,17 +17,22 @@ export const topicsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_TOPICS:
       return { ...state, 
-        topics: action.payload,
-        columns: Object.keys(action.payload[0])
+        topics: action.payload.data,
+        columns: action.payload.columns
       };
     case FETCH_TOPIC:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, topics:[action.payload, ...state.topics] };
     case CREATE_TOPIC:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, topics:[action.payload, ...state.topics]};
     case EDIT_TOPIC:
-      return { ...state, [action.payload.id]: action.payload };
+      const topicIndex = state.topics.findIndex(
+        (topic) => topic.id === action.payload.id
+      );
+      const newTopicsArray = [...state.topics];
+      newTopicsArray[topicIndex] = action.payload;
+      return { ...state, roles: newTopicsArray };
     case DELETE_TOPIC:
-      return _.omit(state, action.payload);
+      return {...state, topics: state.topics.filter(topic=> topic.id !== action.payload.id)}
     default:
       return state;
   }

@@ -53,7 +53,10 @@ class RolesDelete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    role: state.roles[Number(history.location.pathname.split("/")[3])]
+    role: state.roles.roles.find(
+      (role) =>
+      role.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

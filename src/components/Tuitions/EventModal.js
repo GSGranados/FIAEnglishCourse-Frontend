@@ -27,6 +27,7 @@ const EventMondal = (props) => {
       await props.deleteEvent(eventID);
       setShowConfirmModal(false);
       setShowEventModal(false);
+      props.fetchEvent(null);
     }
 
     const onSubmit = async (formValues) =>{

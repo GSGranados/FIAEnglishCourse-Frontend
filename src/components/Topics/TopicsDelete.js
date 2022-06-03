@@ -6,19 +6,19 @@ import { fetchTopic, deleteTopic } from "../../actions/topics";
 import { Link } from "react-router-dom";
 class TopicsDelete extends React.Component {
   async componentDidMount() {
-    const roleId = Number(history.location.pathname.split("/")[3]);
-    await this.props.fetchTopic(roleId);
+    const topicId = Number(history.location.pathname.split("/")[3]);
+    await this.props.fetchTopic(topicId);
   }
 
   renderContent() {
-    if (!this.props.role) {
+    if (!this.props.topic) {
       return "Are you sure you want to delete this Topic?";
     }
-    return `Are you sure you want to delete the Topic: ${this.props.role.name}?`;
+    return `Are you sure you want to delete the Topic: ${this.props.topic.name}?`;
   }
 
   renderActions() {
-    const roleId = Number(history.location.pathname.split("/")[3]);
+    const topicId = Number(history.location.pathname.split("/")[3]);
     return (
       <React.Fragment>
         <Link
@@ -28,7 +28,7 @@ class TopicsDelete extends React.Component {
           Cancel
         </Link>
         <button
-          onClick={() => this.props.deleteTopic(roleId)}
+          onClick={() => this.props.deleteTopic(topicId)}
           className="px-2 py-2 rounded-lg bg-red-400 hover:bg-red-600 transition-all ease-in text-white-text-100 font-medium "
         >
           Delete Topic
@@ -53,7 +53,10 @@ class TopicsDelete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    role: state.topics[Number(history.location.pathname.split("/")[3])]
+    topic: state.topics.topics.find(
+      (topic) =>
+      topic.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

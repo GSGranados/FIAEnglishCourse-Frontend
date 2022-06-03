@@ -518,7 +518,11 @@
     }
   ],
   "tutorReviewCriteria": {
-    "columns": [],
+    "columns": [
+      "id",
+      "name",
+      "isActive"
+    ],
     "data": [
       {
         "id": 1,
@@ -578,11 +582,6 @@
       "isActive": true
     },
     {
-      "name": "Rev: Ale",
-      "id": 6,
-      "isActive": false
-    },
-    {
       "name": "Rev: Presentation",
       "id": 7,
       "isActive": true
@@ -598,12 +597,6 @@
       "title": "This is a test with a day - 3",
       "day": 1653779725760,
       "id": 3
-    },
-    {
-      "title": "This is a june event",
-      "description": "This is another description",
-      "day": 1654322400000,
-      "id": 4
     }
   ]
 }

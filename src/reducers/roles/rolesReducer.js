@@ -1,4 +1,3 @@
-import _ from "lodash";
 import {
   CREATE_ROLE,
   FETCH_ROLE,
@@ -18,17 +17,22 @@ export const rolesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROLES:
       return { ...state, 
-        roles: action.payload,
-        columns: Object.keys(action.payload[0])
+        roles: action.payload.data,
+        columns: action.payload.columns
       };
     case FETCH_ROLE:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, roles: [action.payload,...state.roles] };
     case CREATE_ROLE:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, roles: [action.payload,...state.roles]  };
     case EDIT_ROLE:
-      return { ...state, [action.payload.id]: action.payload };
+      const roleIndex = state.roles.findIndex(
+        (role) => role.id === action.payload.id
+      );
+      const newRolesArray = [...state.roles];
+      newRolesArray[roleIndex] = action.payload;
+      return { ...state, roles: newRolesArray };
     case DELETE_ROLE:
-      return _.omit(state, action.payload);
+      return {...state, roles: state.roles.filter(role=> role.id !== action.payload.id)}
     default:
       return state;
   }

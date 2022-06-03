@@ -78,9 +78,13 @@ export const editEvent = (eventID, formValues) => async (dispatch) => {
   dispatch(editEventAction(response.data));
 };
 //delete one
-export const deleteEvent = (careerID) => async (dispatch) => {
-  await fiaECAPI.delete(`tuitions/${careerID}`);
-  dispatch(deleteEventAction(careerID));
-  fetchEvents();
+export const deleteEvent = (eventID) => async (dispatch, getState) => {
+  await fiaECAPI.delete(`tuitions/${eventID}`);
+  dispatch(deleteEventAction(eventID));
+  /**Filtering the array to execute the Interface Re-render  */
+  const {events} = getState().calendar;
+  const filteredEvents = events.filter(event=>event.id !== eventID);
+  dispatch(fetchEventsAction(filteredEvents));
+
 
 };

@@ -27,7 +27,12 @@ export class UsersEdit extends Component {
 }
 
 const mapStateToProps = (state) =>{
-  return {user : state.users.users[Number(history.location.pathname.split("/")[3])-1]}  
+  return {
+    user: state.users.users.find(
+      (user) =>
+      user.id === Number(history.location.pathname.split("/")[3])
+    ),
+  };  
 }
 
 export default connect(mapStateToProps,{fetchUser,editUser})(UsersEdit);
