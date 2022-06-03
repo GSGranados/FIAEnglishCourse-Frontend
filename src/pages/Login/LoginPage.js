@@ -1,17 +1,18 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { logInAction } from '../../actions/login';
 import LoginForm from '../../components/Login/LoginForm'
-import { useAuth } from '../../components/Utilities/auth';
-const LoginPage = () => {
 
-  const auth = useAuth();
+const LoginPage = ({logInAction}) => {
+
   const navigate = useNavigate();
   const location = useLocation();
 
   const redirectPath = location.state?.path || "/"; 
 
-  const onSubmit = (formValues) => {
-    auth.login(formValues.username);
+   const onSubmit = async (formValues) => {
+    await logInAction(formValues);
     navigate(redirectPath,{replace:true})
   };
 
@@ -28,4 +29,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default connect(null,{logInAction})(LoginPage);
