@@ -67,6 +67,8 @@ import TutorReviewCriteriaEdit from "../TutorReviewCriteria/TutorReviewCriteriaE
 /**RESERVATION ROUTES */
 import TuitionsPage from "../../pages/Tuitions/TuitionsPage";
 import TuitionsList from "../Tuitions/TuitionsList";
+import TuitionDetails from "../Tuitions/TuitionDetails";
+import { HomeComponent } from "../Home/HomeComponent";
 
 const Router = () => {
   return (
@@ -74,6 +76,7 @@ const Router = () => {
         <Route path="/login" exact element={<LoginPage/>} />
         {/* <Route path="" element={<RequireAuth><MainPage/></RequireAuth>}> */}
         <Route path="" element={<MainPage/>}>
+          <Route path="" exact element={<HomeComponent/>}/>
           <Route path="/permissions/*" exact element={<PermissionsPage/>}>
             <Route path="" exact element={<PermmissionsComponent/>} />
             <Route path="new" exact element={<PermissionsCreate/>} />
@@ -136,6 +139,7 @@ const Router = () => {
           </Route>
           <Route path="/tuitions/*" element={<TuitionsPage/>}>
             <Route path="" exact element={<TuitionsList/>} />
+            <Route path="view/:id" exact element={<TuitionDetails/>} />
           </Route>
         </Route>
     </Routes>

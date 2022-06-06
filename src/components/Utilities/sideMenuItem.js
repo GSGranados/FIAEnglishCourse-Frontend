@@ -6,13 +6,13 @@ export const SideMenuItem = (props) => {
     const {menuGap, open,src,link} = props;
 
   return (
-    <li className={`text-white-text-100 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-red rounded-md hover:font-bold ${menuGap? 'mt-9': 'mt-2'}`}>
     <NavLink to={link}>
+    <li className={`text-white-text-100 text-xs flex items-center gap-x-2 cursor-pointer p-2 hover:bg-red-500 rounded-md  ${menuGap? 'mt-9': 'mt-2'}`}>
     <FontAwesomeIcon icon={FaIcons[`${src}`]} size="xl"/>
-    <span className={`${!open && 'hidden'} origin-center duration-200 text-lg ml-2`}>
+    <span className={`${!open && 'hidden'} origin-center duration-200 text-[1rem] ml-2`}>
     {props.optionName}
     </span>
-    </NavLink>
     </li>
+    </NavLink>
   )
 }

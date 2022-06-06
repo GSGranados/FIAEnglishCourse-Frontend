@@ -29,14 +29,14 @@ const EventDelete = ({
         <p className="text-[1.1rem] font-normal">
           Are you Sure you want to cancel the following Reservation?
         </p>
-        <p className="font-semibold text-[1.1rem]">{selectedEvent.title}</p>
+        <p className="font-semibold text-[1.1rem]">{selectedEvent?.title}</p>
       </div>
       <footer
         onClick={(e) => e.stopPropagation()}
         className="flex justify-end gap-3 w-100 border-t p-3"
       >
         <button
-          onClick={() => onDelete(selectedEvent.id)}
+          onClick={() => onDelete(selectedEvent?.id)}
           type="button"
           className="bg-red-500 hover:bg-red-600 transition-all ease-in px-6 py-2 rounded-lg text-white-text-100 text-sm"
         >

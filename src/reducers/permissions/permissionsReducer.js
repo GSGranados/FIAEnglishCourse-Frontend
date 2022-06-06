@@ -1,4 +1,3 @@
-import _ from "lodash";
 import {
   CREATE_PERMISSION,
   FETCH_PERMISSIONS,
@@ -18,18 +17,25 @@ export const permissionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_PERMISSIONS:
       return { ...state, 
-        permissions: action.payload,
-        columns: Object.keys(action.payload[0])
-        //columns: action.payload.columns
+        permissions: action.payload.data,
+        columns: action.payload.columns
       };
     case FETCH_PERMISSION:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, permissions:[action.payload, ...state.permissions] };
     case CREATE_PERMISSION:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, permissions:[action.payload, ...state.permissions] };
     case EDIT_PERMISSION:
-      return { ...state, [action.payload.id]: action.payload };
+      const permissionIndex = state.permissions.findIndex(
+        (permission) => permission.id === action.payload.id
+      );
+      const newPermissionsArray = [...state.permissions];
+      newPermissionsArray[permissionIndex] = action.payload;
+      return { ...state, permissions: newPermissionsArray };
     case DELETE_PERMISSION:
-      return _.omit(state, action.payload);
+      return {
+        ...state,
+        permissions: state.permissions.filter((permission) => permission.id !== action.payload.id),
+      };
     default:
       return state;
   }

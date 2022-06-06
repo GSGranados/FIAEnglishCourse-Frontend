@@ -39,7 +39,10 @@ class TopicsEdit extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      topic: state.topics[Number(history.location.pathname.split("/")[3])],
+    topic: state.topics.topics.find(
+      (topic) =>
+      topic.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

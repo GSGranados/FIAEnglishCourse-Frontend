@@ -1,4 +1,3 @@
-import _ from "lodash";
 import {
   CREATE_TUTOR_REVIEW_CRITERIA,
   FETCH_TUTOR_REVIEW_CRITERIA,
@@ -11,25 +10,42 @@ const initialState = {
   isLoading: false,
   tutorReviewCriteria: [],
   columns: [],
-  error: null
-}
+  error: null,
+};
 
 export const tutorReviewCriteriaReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MULTIPLE_TUTOR_REVIEW_CRITERIA:
-      return { ...state, 
-        tutorReviewCriteria: action.payload,
-        columns: Object.keys(action.payload[0])
+      return {
+        ...state,
+        tutorReviewCriteria: action.payload.data,
+        columns: action.payload.columns,
       };
     case FETCH_TUTOR_REVIEW_CRITERIA:
-      return { ...state, [action.payload.id]: action.payload };
+      return {
+        ...state,
+        tutorReviewCriteria: [action.payload, ...state.tutorReviewCriteria],
+      };
     case CREATE_TUTOR_REVIEW_CRITERIA:
-      return { ...state, [action.payload.id]: action.payload };
+      return {
+        ...state,
+        tutorReviewCriteria: [action.payload, ...state.tutorReviewCriteria],
+      };
     case EDIT_TUTOR_REVIEW_CRITERIA:
-      return { ...state, [action.payload.id]: action.payload };
+      const tutorReviewCriteriaIndex = state.tutorReviewCriteria.findIndex(
+        (tutorReviewCriteria) => tutorReviewCriteria.id === action.payload.id
+      );
+      const newtutorReviewCriteriaArray = [...state.tutorReviewCriteria];
+      newtutorReviewCriteriaArray[tutorReviewCriteriaIndex] = action.payload;
+      return { ...state, tutorReviewCriteria: newtutorReviewCriteriaArray };
     case DELETE_TUTOR_REVIEW_CRITERIA:
-      return _.omit(state, action.payload);
+      return {
+        ...state,
+        tutorReviewCriteria: state.tutorReviewCriteria.filter(
+          (criteria) => criteria.id !== action.payload.id
+        ),
+      };
     default:
       return state;
   }
-}
+};

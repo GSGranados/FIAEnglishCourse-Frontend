@@ -53,7 +53,10 @@ class AbilitiesDelete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    ability: state.abilities[Number(history.location.pathname.split("/")[3])]
+    ability: state.abilities.abilities.find(
+      (ability) =>
+        ability.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

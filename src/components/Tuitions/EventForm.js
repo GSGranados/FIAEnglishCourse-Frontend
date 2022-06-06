@@ -7,7 +7,7 @@ import {
   faClock,
   faBarsStaggered,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 
 export class EventForm extends Component {
   renderError({ error, touched }) {
@@ -49,7 +49,13 @@ export class EventForm extends Component {
   };
 
   render() {
-    const { onCloseModal,onDeleteEvent, handleSubmit, daySelected, selectedEvent} = this.props;
+    const {
+      onCloseModal,
+      onDeleteEvent,
+      handleSubmit,
+      daySelected,
+      selectedEvent,
+    } = this.props;
     return (
       <form
         onSubmit={handleSubmit(this.onSubmit)}
@@ -61,7 +67,7 @@ export class EventForm extends Component {
             <FontAwesomeIcon icon={faClose} />
           </button>
         </header>
-        <div className="p-[1rem] bg-white-text-100" >
+        <div className="p-[1rem] bg-white-text-100">
           <div className="grid grid-cols-1/5 items-end gap-y-7">
             <div></div>
             <Field
@@ -71,9 +77,15 @@ export class EventForm extends Component {
               type={"text"}
               placeholder={"Add title"}
             />
-            <span className="text-center"><FontAwesomeIcon icon={faClock} size="xs" /></span>
-            <p className="text-sm pl-4 self-center">{daySelected.format("dddd, MMMM DD")}</p>
-            <span className="justify-self-center self-center"><FontAwesomeIcon icon={faBarsStaggered} size="xs" /></span>
+            <span className="text-center">
+              <FontAwesomeIcon icon={faClock} size="xs" />
+            </span>
+            <p className="text-sm pl-4 self-center">
+              {daySelected.format("dddd, MMMM DD")}
+            </p>
+            <span className="justify-self-center self-center">
+              <FontAwesomeIcon icon={faBarsStaggered} size="xs" />
+            </span>
             <Field
               name="description"
               component={this.renderInput}
@@ -84,14 +96,34 @@ export class EventForm extends Component {
           </div>
         </div>
         <footer className="flex justify-end gap-3 w-100 border-t p-3">
-            {selectedEvent && (
-              <button  onClick={onDeleteEvent} type="button" className="bg-red-500 hover:bg-red-600 transition-all ease-in px-6 py-2 rounded-lg text-white-text-100 text-sm">
-                Cancel Reservation
+          {selectedEvent ? (
+            <button
+              onClick={onDeleteEvent}
+              type="button"
+              className="bg-red-500 hover:bg-red-600 transition-all ease-in px-6 py-2 rounded-lg text-white-text-100 text-sm"
+            >
+              Cancel Reservation
             </button>
-            )}
-             <button type="submit" className={`${selectedEvent?"bg-yellow-500":"bg-green-500"} hover:${selectedEvent?"bg-yellow-600":"bg-green-600"} transition-all ease-in px-6 py-2 rounded-lg text-white-text-100 text-sm`}>
-                {selectedEvent? "Edit": "Make"} Reservation
+          ) : (
+            <button onClick={onCloseModal} className="bg-gray-text-500 hover:bg-gray-text-600 transition-all ease-in px-6 py-2 rounded-lg text-white-text-100 text-sm">
+              Cancel
             </button>
+          )}
+          {selectedEvent ? (
+            <Link
+              to={`view/${selectedEvent.id}`}
+              className="bg-green-500 hover:bg-green-600 transition-all ease-in px-6 py-2 rounded-lg text-white-text-100 text-sm"
+            >
+              Reservation Details
+            </Link>
+          ) : (
+            <button
+              type="submit"
+              className={`bg-green-500 hover:bg-green-600 transition-all ease-in px-6 py-2 rounded-lg text-white-text-100 text-sm`}
+            >
+              Make Reservation
+            </button>
+          )}
         </footer>
       </form>
     );

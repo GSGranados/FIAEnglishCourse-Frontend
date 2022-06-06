@@ -43,7 +43,7 @@ const deleteEducationalLevelAction = (educationalLevelID) => {
 //EducationalLevels action creators
 //create
 export const createEducationalLevel = (formValues) => async (dispatch, getState) => {
-  const response = await fiaECAPI.post("/educationalLevels", {
+  const response = await fiaECAPI.post("/educationalLevels2", {
     ...formValues,
   });
   dispatch(createEducationalLevelAction(response.data));
@@ -58,14 +58,14 @@ export const fetchEducationalLevels = () => async (dispatch) => {
 
 //fetch one
 export const fetchEducationalLevel = (educationalLevelID) => async (dispatch) => {
-  const response = await fiaECAPI.get(`/educationalLevels/${educationalLevelID}`);
+  const response = await fiaECAPI.get(`/educationalLevels2/${educationalLevelID}`);
   dispatch(fetchEducationalLevelAction(response.data));
 };
 
 //edit one
 export const editEducationalLevel = (educationalLevelID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `/educationalLevels/${educationalLevelID}`,
+    `/educationalLevels2/${educationalLevelID}`,
     formValues
   );
   dispatch(editEducationalLevelAction(response.data));
@@ -73,7 +73,7 @@ export const editEducationalLevel = (educationalLevelID, formValues) => async (d
 };
 //delete one
 export const deleteEducationalLevel = (educationalLevelID) => async (dispatch) => {
-  await fiaECAPI.delete(`/educationalLevels/${educationalLevelID}`);
+  await fiaECAPI.delete(`/educationalLevels2/${educationalLevelID}`);
   dispatch(deleteEducationalLevelAction(educationalLevelID));
   history.push("/educationalLevels");
 };

@@ -43,7 +43,7 @@ const deleteEducationalResourceAction = (educationalResourceID) => {
 //EducationalResources action creators
 //create
 export const createEducationalResource = (formValues) => async (dispatch, getState) => {
-  const response = await fiaECAPI.post("/educationalResources", {
+  const response = await fiaECAPI.post("/educationalResources2", {
     ...formValues,
   });
   dispatch(createEducationalResourceAction(response.data));
@@ -58,14 +58,14 @@ export const fetchEducationalResources = () => async (dispatch) => {
 
 //fetch one
 export const fetchEducationalResource = (educationalResourceID) => async (dispatch) => {
-  const response = await fiaECAPI.get(`/educationalResources/${educationalResourceID}`);
+  const response = await fiaECAPI.get(`/educationalResources2/${educationalResourceID}`);
   dispatch(fetchEducationalResourceAction(response.data));
 };
 
 //edit one
 export const editEducationalResource = (educationalResourceID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `/educationalResources/${educationalResourceID}`,
+    `/educationalResources2/${educationalResourceID}`,
     formValues
   );
   dispatch(editEducationalResourceAction(response.data));
@@ -74,7 +74,7 @@ export const editEducationalResource = (educationalResourceID, formValues) => as
 
 //delete one
 export const deleteEducationalResource = (educationalResourceID) => async (dispatch) => {
-  await fiaECAPI.delete(`/educationalResources/${educationalResourceID}`);
+  await fiaECAPI.delete(`/educationalResources2/${educationalResourceID}`);
   dispatch(deleteEducationalResourceAction(educationalResourceID));
   history.push("/educationalresources");
 };

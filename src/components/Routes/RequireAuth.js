@@ -1,11 +1,16 @@
 
+import { connect } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom'
-import { useAuth } from '../Utilities/auth'
-const RequireAuth = ({children}) => {
-    const auth = useAuth();
+const RequireAuth = ({children,login}) => {
     const location = useLocation();
-    if(!auth.user) return <Navigate to="/login" state={{path: location.pathname}}/>
+    if(!login) return <Navigate to="/login" state={{path: location.pathname}}/>
     return children;
 }
 
-export default RequireAuth
+const mapStateToProps = (state) =>{
+    return{
+        login: state.login.user
+    }
+}
+
+export default connect(mapStateToProps,null)(RequireAuth);

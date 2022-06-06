@@ -61,10 +61,11 @@ export class UsersDelete extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.users.users[
-      Number(history.location.pathname.split("/")[3]) - 1
-    ],
-  };
+    user: state.users.users.find(
+      (user) =>
+      user.id === Number(history.location.pathname.split("/")[3])
+    ),
+  };  
 };
 
 export default connect(mapStateToProps, { fetchUser, deleteUser })(UsersDelete);

@@ -1,4 +1,3 @@
-import _ from "lodash";
 import {
   CREATE_EDUCATIONAL_RESOURCE,
   FETCH_EDUCATIONAL_RESOURCE,
@@ -11,25 +10,42 @@ const initialState = {
   isLoading: false,
   educationalResources: [],
   columns: [],
-  error: null
-}
+  error: null,
+};
 
 export const educationalResourcesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_EDUCATIONAL_RESOURCES:
-      return { ...state, 
-        educationalResources: action.payload,
-        columns: Object.keys(action.payload[0])
+      return {
+        ...state,
+        educationalResources: action.payload.data,
+        columns: action.payload.columns,
       };
     case FETCH_EDUCATIONAL_RESOURCE:
-      return { ...state, [action.payload.id]: action.payload };
+      return {
+        ...state,
+        educationalResources: [action.payload, ...state.educationalResources],
+      };
     case CREATE_EDUCATIONAL_RESOURCE:
-      return { ...state, [action.payload.id]: action.payload };
+      return {
+        ...state,
+        educationalResources: [action.payload, ...state.educationalResources],
+      };
     case EDIT_EDUCATIONAL_RESOURCE:
-      return { ...state, [action.payload.id]: action.payload };
+      const educationalResoucesIndex = state.educationalResources.findIndex(
+        (educationalResource) => educationalResource.id === action.payload.id
+      );
+      const newEducationalResourcesArray = [...state.educationalResources];
+      newEducationalResourcesArray[educationalResoucesIndex] = action.payload;
+      return { ...state, educationalResources: newEducationalResourcesArray };
     case DELETE_EDUCATIONAL_RESOURCE:
-      return _.omit(state, action.payload);
+      return {
+        ...state,
+        educationalResources: state.educationalResources.filter(
+          (educationalResource) => educationalResource.id !== action.payload.id
+        ),
+      };
     default:
       return state;
   }
-}
+};

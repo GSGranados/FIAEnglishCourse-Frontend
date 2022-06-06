@@ -43,7 +43,7 @@ const deleteTopicAction = (topicID) => {
 //Topics action creators
 //create
 export const createTopic = (formValues) => async (dispatch, getState) => {
-  const response = await fiaECAPI.post("/topics", {
+  const response = await fiaECAPI.post("/topics2", {
     ...formValues,
   });
   dispatch(createTopicAction(response.data));
@@ -58,14 +58,14 @@ export const fetchTopics = () => async (dispatch) => {
 
 //fetch one
 export const fetchTopic = (topicID) => async (dispatch) => {
-  const response = await fiaECAPI.get(`/topics/${topicID}`);
+  const response = await fiaECAPI.get(`/topics2/${topicID}`);
   dispatch(fetchTopicAction(response.data));
 };
 
 //edit one
 export const editTopic = (topicID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `/topics/${topicID}`,
+    `/topics2/${topicID}`,
     formValues
   );
   dispatch(editTopicAction(response.data));
@@ -74,7 +74,7 @@ export const editTopic = (topicID, formValues) => async (dispatch) => {
 
 //delete one
 export const deleteTopic = (topicID) => async (dispatch) => {
-  await fiaECAPI.delete(`/topics/${topicID}`);
+  await fiaECAPI.delete(`/topics2/${topicID}`);
   dispatch(deleteTopicAction(topicID));
   history.push("/topics");
 };

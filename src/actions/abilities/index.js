@@ -43,7 +43,7 @@ const deleteAbilityAction = (abilityID) => {
 //Abilitys action creators
 //create
 export const createAbility = (formValues) => async (dispatch, getState) => {
-  const response = await fiaECAPI.post("/abilities", {
+  const response = await fiaECAPI.post("/abilities2", {
     ...formValues,
   });
   dispatch(createAbilityAction(response.data));
@@ -58,14 +58,14 @@ export const fetchAbilities = () => async (dispatch) => {
 
 //fetch one
 export const fetchAbility = (abilityID) => async (dispatch) => {
-  const response = await fiaECAPI.get(`/abilities/${abilityID}`);
+  const response = await fiaECAPI.get(`/abilities2/${abilityID}`);
   dispatch(fetchAbilityAction(response.data));
 };
 
 //edit one
 export const editAbility = (abilityID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(
-    `/abilities/${abilityID}`,
+    `/abilities2/${abilityID}`,
     formValues
   );
   dispatch(editAbilityAction(response.data));
@@ -74,7 +74,7 @@ export const editAbility = (abilityID, formValues) => async (dispatch) => {
 
 //delete one
 export const deleteAbility = (abilityID) => async (dispatch) => {
-  await fiaECAPI.delete(`/abilities/${abilityID}`);
+  await fiaECAPI.delete(`/abilities2/${abilityID}`);
   dispatch(deleteAbilityAction(abilityID));
   history.push("/abilities");
 };

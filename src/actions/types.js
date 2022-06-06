@@ -68,3 +68,7 @@ export const FETCH_EVENTS ="FETCH_EVENTS";
 export const FETCH_EVENT ="FETCH_EVENT";
 export const DELETE_EVENT ="DELETE_EVENT";
 export const EDIT_EVENT ="EDIT_EVENT";
+
+/**LOGIN ACTION TYPES */
+export const LOG_IN="LOG_IN";
+export const LOG_OUT="LOG_OUT";

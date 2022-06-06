@@ -39,7 +39,10 @@ class EducationalLevelsEdit extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      educationalLevel: state.educationalLevels[Number(history.location.pathname.split("/")[3])],
+    educationalLevel: state.educationalLevels.educationalLevels.find(
+      (educationalLevel) =>
+      educationalLevel.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

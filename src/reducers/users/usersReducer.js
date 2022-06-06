@@ -1,4 +1,3 @@
-import _ from "lodash";
 import {
   CREATE_USER,
   FETCH_USERS,
@@ -22,13 +21,18 @@ export const usersReducer = (state = initialState,action) =>{
               columns: action.payload.columns
             };
           case FETCH_USER:
-            return { ...state, [action.payload.id]: action.payload };
+            return { ...state,  users:[action.payload, ...state.users]};
           case CREATE_USER:
-            return { ...state, [action.payload.id]: action.payload };
+            return { ...state, users:[action.payload, ...state.users] };
           case EDIT_USER:
-            return { ...state, [action.payload.id]: action.payload };
+            const userIndex = state.users.findIndex(
+              (user) => user.id === action.payload.id
+            );
+            const newUsersArray = [...state.users];
+            newUsersArray[userIndex] = action.payload;
+            return { ...state, users: newUsersArray };
           case DELETE_USER:
-            return _.omit(state, action.payload);
+            return {...state, users:state.users.filter(user=> user.id !== action.payload.id)}
           default:
             return state;
     }

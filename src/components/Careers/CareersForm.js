@@ -50,7 +50,7 @@ class CareersForm extends Component {
         />
         <div className="flex justify-between items-center w-full">
           <Link
-            to={"/carrers"}
+            to={"/careers"}
             className="bg-gray-text-200 w-[10rem] rounded-lg text-white-text-100 font-semibold text-center p-2 hover:bg-gray-text-300 transition-all ease-in duration-300"
           >
             Cancel

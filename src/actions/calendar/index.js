@@ -1,5 +1,4 @@
 import fiaECAPI from "../../helpers/apiHelper";
-import history from "../../history";
 import {
   NEXT_MONTH,
   PREV_MONTH,
@@ -73,15 +72,26 @@ export const fetchEvent = (event) => async (dispatch) => {
   dispatch(fetchEventAction(event));
 };
 
+
+//fetchSpecificEvent
+export const fetchEventById = (eventID) => async (dispatch)=>{
+  const response = await fiaECAPI.get(`tuitions/${eventID}`);
+  dispatch(fetchEventAction(response.data));
+}
+
 //edit one
 export const editEvent = (eventID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(`tuitions/${eventID}`, formValues);
   dispatch(editEventAction(response.data));
 };
 //delete one
-export const deleteEvent = (careerID) => async (dispatch) => {
-  await fiaECAPI.delete(`tuitions/${careerID}`);
-  dispatch(deleteEventAction(careerID));
-  history.push("/tuitions")
+export const deleteEvent = (eventID) => async (dispatch, getState) => {
+  await fiaECAPI.delete(`tuitions/${eventID}`);
+  dispatch(deleteEventAction(eventID));
+  /**Filtering the array to execute the Interface Re-render  */
+  const {events} = getState().calendar;
+  const filteredEvents = events.filter(event=>event.id !== eventID);
+  dispatch(fetchEventsAction(filteredEvents));
+
 
 };

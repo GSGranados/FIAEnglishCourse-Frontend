@@ -39,7 +39,10 @@ class TutorReviewCriteriaEdit extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      tutorReviewCriteria: state.tutorReviewCriteria[Number(history.location.pathname.split("/")[3])],
+    tutorReviewCriteria: state.tutorReviewCriteria.tutorReviewCriteria.find(
+      (criteria) =>
+      criteria.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 

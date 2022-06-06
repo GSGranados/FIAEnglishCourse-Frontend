@@ -53,7 +53,10 @@ class EducationalResourcesDelete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    educationalResource: state.educationalResources[Number(history.location.pathname.split("/")[3])]
+    educationalResource: state.educationalResources.educationalResources.find(
+      (educationalResource) =>
+      educationalResource.id === Number(history.location.pathname.split("/")[3])
+    ),
   };
 };
 
