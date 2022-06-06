@@ -1,14 +1,14 @@
 import React from "react";
 import { Sidebar } from "../../components/Utilities/sidebar";
-import  Navbar  from "../../components/Utilities/navbar";
+import Navbar from "../../components/Utilities/navbar";
 import { Outlet } from "react-router-dom";
 const MainPage = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-full">
       <Sidebar />
       <div className="w-full h-full overflow-y-auto">
         <Navbar />
-        <Outlet/>
+        <Outlet />
       </div>
     </div>
   );
