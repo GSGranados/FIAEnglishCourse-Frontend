@@ -5,6 +5,9 @@ module.exports = {
       screens: {
         tablet: { raw: "(max-width: 768px)" },
       },
+      gridTemplateColumns: {
+        "1/5": "1fr 5fr",
+      },
     },
     colors: {
       "wine-red": {
@@ -62,6 +65,17 @@ module.exports = {
         800: "#002957",
         900: "#00142c",
       },
+      indigo: {
+        100: "#dbcce6",
+        200: "#b799cd",
+        300: "#9366b4",
+        400: "#6f339b",
+        500: "#4b0082",
+        600: "#3c0068",
+        700: "#2d004e",
+        800: "#1e0034",
+        900: "#0f001a",
+      },
       "white-text": {
         100: "#ffffff",
         200: "#ffffff",
@@ -100,5 +114,5 @@ module.exports = {
       sans: ["Roboto", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

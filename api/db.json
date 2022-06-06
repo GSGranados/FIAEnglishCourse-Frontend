@@ -1,0 +1,602 @@
+{
+  "permissions": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "PLATFORM_ADMIN"
+      },
+      {
+        "id": 2,
+        "name": "PLATFORM_TUTOR2"
+      },
+      {
+        "name": "PLATFORM_STUDENT",
+        "id": 4
+      }
+    ]
+  },
+  "permissions2": [
+    {
+      "id": 1,
+      "name": "PLATFORM_ADMIN"
+    },
+    {
+      "id": 2,
+      "name": "PLATFORM_TUTOR2"
+    },
+    {
+      "name": "PLATFORM_STUDENT",
+      "id": 4
+    }
+  ],
+  "roles": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "CREATE_ROLE"
+      },
+      {
+        "id": 2,
+        "name": "EDIT_ROLE"
+      },
+      {
+        "id": 3,
+        "name": "DELETE_ROLE"
+      },
+      {
+        "id": 4,
+        "name": "GET_ROLE"
+      },
+      {
+        "id": 5,
+        "name": "GET_ROLES"
+      },
+      {
+        "id": 6,
+        "name": "DELETE_ROLES"
+      },
+      {
+        "name": "MISC_ROLE_1",
+        "id": 7
+      },
+      {
+        "name": "MISC_ROLE_2",
+        "id": 8
+      }
+    ]
+  },
+  "roles2": [
+    {
+      "id": 1,
+      "name": "CREATE_ROLE"
+    },
+    {
+      "id": 2,
+      "name": "EDIT_ROLE"
+    },
+    {
+      "id": 3,
+      "name": "DELETE_ROLE"
+    },
+    {
+      "id": 4,
+      "name": "GET_ROLE"
+    },
+    {
+      "id": 5,
+      "name": "GET_ROLES"
+    },
+    {
+      "id": 6,
+      "name": "DELETE_ROLES"
+    },
+    {
+      "name": "MISC_ROLE_1",
+      "id": 7
+    },
+    {
+      "name": "MISC_ROLE_2",
+      "id": 8
+    }
+  ],
+  "users": {
+    "columns": [
+      "Id",
+      "E-mail",
+      "First Name",
+      "Last Name",
+      "Phone Number",
+      "Carnet"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "email": "gc14003@ues.edu.sv",
+        "first_name": "Steven",
+        "last_name": "Granados",
+        "phone_number": "77593611",
+        "carnet": "gc14003"
+      },
+      {
+        "id": 2,
+        "email": "lh15004@ues.edu.sv",
+        "first_name": "Cesar",
+        "last_name": "Lopez",
+        "phone_number": "77593611",
+        "carnet": "lh15004"
+      }
+    ]
+  },
+  "users2": [
+    {
+      "id": 1,
+      "email": "gc14003@ues.edu.sv",
+      "password": "123456",
+      "first_name": "Steven Edited",
+      "last_name": "Granados",
+      "phone_number": "77593611",
+      "created_at": null,
+      "updated_at": null,
+      "profile_picture": null,
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "carnet": "gc14003"
+    },
+    {
+      "id": 2,
+      "email": "lh15004@ues.edu.sv",
+      "password": "123456",
+      "first_name": "Cesar",
+      "last_name": "Lopez",
+      "phone_number": "77593611",
+      "created_at": null,
+      "updated_at": null,
+      "profile_picture": null,
+      "is_active": false,
+      "is_superuser": false,
+      "is_staff": false,
+      "carnet": "gc14003"
+    },
+    {
+      "email": "gc14003@ues.edu.sv",
+      "password": "13585",
+      "first_name": "Steven",
+      "last_name": "Granados",
+      "phone_number": "77593611",
+      "carnet": "gc14003",
+      "created_at": "Mon, 23 May 2022 01:36:18 GMT",
+      "updated_at": "Mon, 23 May 2022 01:36:18 GMT",
+      "profile_picture": null,
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "id": 3
+    }
+  ],
+  "career": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "INGENIERÍA EN SISTEMAS INFORMÁTICOS"
+      },
+      {
+        "id": 3,
+        "name": "INGENIERÍA MECATRONICA"
+      },
+      {
+        "id": 4,
+        "name": "INGENIERÍA EN SISTEMAS"
+      }
+    ]
+  },
+  "career2": [
+    {
+      "id": 1,
+      "name": "INGENIERÍA EN SISTEMAS INFORMÁTICOS"
+    },
+    {
+      "id": 3,
+      "name": "INGENIERÍA MECATRONICA"
+    },
+    {
+      "id": 4,
+      "name": "INGENIERÍA EN SISTEMAS"
+    }
+  ],
+  "educationalLevels": {
+    "columns": [
+      "id",
+      "name",
+      "career_id"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "ISI LV 1",
+        "career_id": 1
+      },
+      {
+        "career_id": 1,
+        "name": "ISI LV 2",
+        "id": 2
+      },
+      {
+        "id": 3,
+        "name": "IEM LV 1",
+        "career_id": 3
+      },
+      {
+        "id": 4,
+        "name": "IES LV 3",
+        "career_id": 4
+      },
+      {
+        "name": "IEM LV 4",
+        "id": 5,
+        "career_id": 3
+      }
+    ]
+  },
+  "educationalLevels2": [
+    {
+      "id": 1,
+      "name": "ISI LV 1",
+      "career_id": 1
+    },
+    {
+      "career_id": 1,
+      "name": "ISI LV 2",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "IEM LV 1",
+      "career_id": 3
+    },
+    {
+      "id": 4,
+      "name": "IES LV 3 - Edite",
+      "career_id": 4
+    }
+  ],
+  "topics": {
+    "columns": [
+      "id",
+      "name",
+      "educational_level_id"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "Introduction to Software Engi",
+        "educational_level_id": 1
+      },
+      {
+        "id": 2,
+        "educational_level_id": 1,
+        "name": "Advanced to Software Engi"
+      },
+      {
+        "id": 3,
+        "name": "Scrum Method",
+        "educational_level_id": 2
+      },
+      {
+        "id": 4,
+        "name": "Extreme Programming",
+        "educational_level_id": 3
+      },
+      {
+        "name": "Some Test Topic",
+        "id": 5,
+        "educational_level_id": 3
+      }
+    ]
+  },
+  "topics2": [
+    {
+      "id": 1,
+      "name": "Introduction to Software Engi",
+      "educational_level_id": 1
+    },
+    {
+      "educational_level_id": 1,
+      "name": "Advanced to Software Engi",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Scrum Method",
+      "educational_level_id": 2
+    },
+    {
+      "id": 4,
+      "name": "Extreme Programming",
+      "educational_level_id": 3
+    },
+    {
+      "name": "Some Test Topic",
+      "id": 5,
+      "educational_level_id": 3
+    }
+  ],
+  "resourceTypes": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "PDF"
+      },
+      {
+        "id": 2,
+        "name": "DOC"
+      },
+      {
+        "id": 3,
+        "name": "DOCX"
+      },
+      {
+        "id": 4,
+        "name": "MP4"
+      },
+      {
+        "name": "MP3",
+        "id": 5
+      }
+    ]
+  },
+  "resourceTypes2": [
+    {
+      "id": 1,
+      "name": "PDF"
+    },
+    {
+      "id": 2,
+      "name": "DOC"
+    },
+    {
+      "id": 3,
+      "name": "DOCX"
+    },
+    {
+      "id": 4,
+      "name": "MP4"
+    },
+    {
+      "name": "MP3",
+      "id": 5
+    }
+  ],
+  "educationalResources": {
+    "columns": [
+      "id",
+      "name",
+      "topic_id",
+      "resource_type_id"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "Cuento de la cegura",
+        "topic_id": 1,
+        "resource_type_id": 1
+      },
+      {
+        "id": 2,
+        "name": "Ensayo sobre la cigueña",
+        "topic_id": 1,
+        "resource_type_id": 2
+      },
+      {
+        "id": 3,
+        "name": "Cloud computing Tercera edicion",
+        "topic_id": 2,
+        "resource_type_id": 4
+      },
+      {
+        "id": 4,
+        "name": "Guia de Trabajo 3",
+        "topic_id": 3,
+        "resource_type_id": 4
+      },
+      {
+        "name": "Node Survival Guide",
+        "topic_id": "2",
+        "resource_type_id": "1",
+        "id": 6
+      },
+      {
+        "name": "El Gato de los Baskerville.",
+        "topic_id": "2",
+        "resource_type_id": "3",
+        "id": 7
+      }
+    ]
+  },
+  "educationalResources2": [
+    {
+      "id": 1,
+      "name": "Cuento de la cegura",
+      "topic_id": 1,
+      "resource_type_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Ensayo sobre la cigueña",
+      "topic_id": 1,
+      "resource_type_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Cloud computing Tercera edicion",
+      "topic_id": 2,
+      "resource_type_id": 4
+    },
+    {
+      "id": 4,
+      "name": "Guia de Trabajo 3",
+      "topic_id": 3,
+      "resource_type_id": 4
+    },
+    {
+      "name": "Node Survival Guide",
+      "topic_id": "2",
+      "resource_type_id": "1",
+      "id": 6
+    },
+    {
+      "name": "El Gato de los Baskerville.",
+      "topic_id": "2",
+      "resource_type_id": "3",
+      "id": 7
+    }
+  ],
+  "abilities": {
+    "columns": [
+      "id",
+      "name"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "Communication"
+      },
+      {
+        "id": 2,
+        "name": "Writing"
+      },
+      {
+        "id": 3,
+        "name": "Multi - Lingual"
+      },
+      {
+        "id": 4,
+        "name": "Speaking"
+      },
+      {
+        "name": "Ale",
+        "id": 5
+      }
+    ]
+  },
+  "abilities2": [
+    {
+      "id": 1,
+      "name": "Communication"
+    },
+    {
+      "id": 2,
+      "name": "Writing"
+    },
+    {
+      "id": 3,
+      "name": "Multi - Lingual"
+    },
+    {
+      "id": 4,
+      "name": "Speaking"
+    },
+    {
+      "name": "Ale",
+      "id": 5
+    }
+  ],
+  "tutorReviewCriteria": {
+    "columns": [
+      "id",
+      "name",
+      "isActive"
+    ],
+    "data": [
+      {
+        "id": 1,
+        "name": "Rev: Comunication",
+        "isActive": true
+      },
+      {
+        "id": 2,
+        "name": "Rev: Writing",
+        "isActive": true
+      },
+      {
+        "id": 3,
+        "name": "Rev: Punctuality",
+        "isActive": false
+      },
+      {
+        "id": 4,
+        "name": "Rev: Speaking",
+        "isActive": true
+      },
+      {
+        "name": "Rev: Ale",
+        "id": 6,
+        "isActive": false
+      },
+      {
+        "name": "Rev: Presentation",
+        "id": 7,
+        "isActive": true
+      },
+      {
+        "name": "Rev: Delete",
+        "id": 8
+      }
+    ]
+  },
+  "tutorReviewCriteria2": [
+    {
+      "id": 1,
+      "name": "Rev: Comunication",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Rev: Writing",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Rev: Punctuality",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "name": "Rev: Speaking",
+      "isActive": true
+    },
+    {
+      "name": "Rev: Presentation",
+      "id": 7,
+      "isActive": true
+    },
+    {
+      "name": "Rev: Delete",
+      "id": 8
+    }
+  ],
+  "tuitions": [
+    {
+      "description": "This is a test description again",
+      "title": "This is a test with a day - 3",
+      "day": 1653779725760,
+      "id": 3
+    }
+  ]
+}

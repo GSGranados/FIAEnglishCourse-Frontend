@@ -1,30 +1,42 @@
+import {
+  CREATE_PERMISSION,
+  FETCH_PERMISSIONS,
+  FETCH_PERMISSION,
+  DELETE_PERMISSION,
+  EDIT_PERMISSION,
+} from "../../actions/types";
 
-import { createSlice } from "@reduxjs/toolkit"
-
-const initialialState = {
-    isLoading: false,
-    permissions: [],
-    errorMsg: ""
+const initialState = {
+  isLoading: false,
+  permissions: [],
+  columns: [],
+  error: null
 }
 
-const permissionsSlice = createSlice({
-    name:"permissions",
-    initialState: initialialState,
-    reducers:{
-        getPermissions(state,action){
-            state.isLoading = true;
-        },
-        getPermissionsSuccess(state,action){
-            state.isLoading = false;
-            state.permissions = action.payload;
-        },
-        getPermissionsFail(state,action){
-            state.errorMsg = `There was an error retrieving the data: ${action.payload}`
-        }
-    }
-})
-
-
-export const {getPermissions,getPermissionsSuccess,getPermissionsFail} = permissionsSlice.actions;
-
-export default permissionsSlice.reducer;
+export const permissionsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_PERMISSIONS:
+      return { ...state, 
+        permissions: action.payload.data,
+        columns: action.payload.columns
+      };
+    case FETCH_PERMISSION:
+      return { ...state, permissions:[action.payload, ...state.permissions] };
+    case CREATE_PERMISSION:
+      return { ...state, permissions:[action.payload, ...state.permissions] };
+    case EDIT_PERMISSION:
+      const permissionIndex = state.permissions.findIndex(
+        (permission) => permission.id === action.payload.id
+      );
+      const newPermissionsArray = [...state.permissions];
+      newPermissionsArray[permissionIndex] = action.payload;
+      return { ...state, permissions: newPermissionsArray };
+    case DELETE_PERMISSION:
+      return {
+        ...state,
+        permissions: state.permissions.filter((permission) => permission.id !== action.payload.id),
+      };
+    default:
+      return state;
+  }
+}

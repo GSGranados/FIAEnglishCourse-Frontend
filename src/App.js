@@ -1,15 +1,11 @@
-import { Sidebar } from "./components/Utilities/sidebar";
-import  {Navbar}  from "./components/Utilities/navbar";
 import Router from "./components/Routes/Router";
+import { AuthProvider } from "./components/Utilities/auth";
+
 function App() {
   return (
-    <div className="flex h-full">
-      <Sidebar />
-      <div className="w-full h-full">
-        <Navbar />
-        <Router />
-      </div>
-    </div>
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
   );
 }
 

@@ -1,36 +1,47 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUserCircle,faBars,faClose,} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-export const Navbar = () => {
+import {faUserCircle,faBars,faClose} from "@fortawesome/free-solid-svg-icons";
+import { NavLink, useNavigate } from "react-router-dom";
+import {logOutAction} from '../../actions/login'
+const Navbar = ({currentLoggedInUser,logOutAction}) => {
   const links = [
     { name: "Tuitions", link: "/" },
     { name: "MOOC Courses", link: "/" },
-    { name: "English Courses", link: "/permissions" },
+    { name: "English Courses", link: "/" },
     { name: "faUserCircle" },
   ];
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+
   const formattedListItems = links.map((item, index) => {
     return (
       <li key={index} className="md:ml-8 text-lg md:my-0 my-7">
         {item.name === "faUserCircle" ? (
             <FontAwesomeIcon icon={faUserCircle} size="xl" className="tablet:hidden cursor-pointer" />
         ) : (
-          <Link
+          <NavLink
             to={item.link}
             className="text-white-text-100 hover:text-opacity-80 duration-300"
           >
             {item.name}
-          </Link>
+          </NavLink>
         )}
       </li>
     );
   });
+
+  const handleLogout = () =>{
+    logOutAction();
+    navigate('/login')
+  }
+
   return (
     <div className="bg-wine-red-600 bg-opacity-90 text-white-text-100 font-bold shadow-md w-full min-h-max py-4 px-10  top-0 left-0">
       <div className="md:flex items-center justify-between">
         <div className="font-bold text-xl cursor-pointer flex items-center">
           FIA English Course
+          {currentLoggedInUser? (<button className="ml-2 px-3 py-2 bg-green-400 text-white-text-100 rounded-lg" onClick={handleLogout}>Logout</button>): ""}
         </div>
         <div
           className="absolute right-8 top-5 cursor-pointer md:hidden"
@@ -47,12 +58,20 @@ export const Navbar = () => {
         >
           {formattedListItems}
           <li className="md:ml-8 text-xl md:my-0 my-7">
-            <Link to="/" className="text-white-text-100 hover:text-opacity-80 duration-300 md:hidden">
+            <NavLink to="/" className="text-white-text-100 hover:text-opacity-80 duration-300 md:hidden">
                 My Profile
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
     </div>
   );
 };
+
+const mapStateToProps = (state) =>{
+  return{
+    currentLoggedInUser: state.login.user
+  }
+}
+
+export default connect(mapStateToProps,{logOutAction})(Navbar);
