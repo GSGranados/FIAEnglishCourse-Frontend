@@ -31,12 +31,8 @@ const EventMondal = (props) => {
     }
 
     const onSubmit = async (formValues) =>{
-      if(selectedEvent){
-        await props.editEvent(selectedEvent.id,{...formValues,day:daySelected.valueOf()});
-      }else{
         const eventObject = {...formValues,day: daySelected.valueOf()}
         await props.createTuitionEvent(eventObject);
-      }
       setShowEventModal(false);
     }
 

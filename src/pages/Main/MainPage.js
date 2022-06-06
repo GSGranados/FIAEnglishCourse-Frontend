@@ -1,6 +1,6 @@
 import React from "react";
 import { Sidebar } from "../../components/Utilities/sidebar";
-import { Navbar } from "../../components/Utilities/navbar";
+import  Navbar  from "../../components/Utilities/navbar";
 import { Outlet } from "react-router-dom";
 const MainPage = () => {
   return (

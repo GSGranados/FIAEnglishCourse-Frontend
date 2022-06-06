@@ -1,16 +1,16 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUserCircle,faBars,faClose} from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "./auth";
-export const Navbar = () => {
+import {logOutAction} from '../../actions/login'
+const Navbar = ({currentLoggedInUser,logOutAction}) => {
   const links = [
     { name: "Tuitions", link: "/" },
     { name: "MOOC Courses", link: "/" },
     { name: "English Courses", link: "/" },
     { name: "faUserCircle" },
   ];
-  const auth = useAuth();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
@@ -32,7 +32,7 @@ export const Navbar = () => {
   });
 
   const handleLogout = () =>{
-    auth.logout();
+    logOutAction();
     navigate('/login')
   }
 
@@ -41,7 +41,7 @@ export const Navbar = () => {
       <div className="md:flex items-center justify-between">
         <div className="font-bold text-xl cursor-pointer flex items-center">
           FIA English Course
-          {auth.user? (<button className="ml-2 px-3 py-2 bg-green-400 text-white-text-100 rounded-lg" onClick={handleLogout}>Logout</button>): ""}
+          {currentLoggedInUser? (<button className="ml-2 px-3 py-2 bg-green-400 text-white-text-100 rounded-lg" onClick={handleLogout}>Logout</button>): ""}
         </div>
         <div
           className="absolute right-8 top-5 cursor-pointer md:hidden"
@@ -67,3 +67,11 @@ export const Navbar = () => {
     </div>
   );
 };
+
+const mapStateToProps = (state) =>{
+  return{
+    currentLoggedInUser: state.login.user
+  }
+}
+
+export default connect(mapStateToProps,{logOutAction})(Navbar);

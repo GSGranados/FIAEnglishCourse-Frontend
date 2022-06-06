@@ -9,6 +9,7 @@ const Day = ({ day, rowIdx,dayEvents, fetchEvent }) => {
   
 
  const openEvent = async (event) =>{
+    await fetchEvent(null)
     await fetchEvent(event);
   }
 
@@ -31,8 +32,9 @@ const Day = ({ day, rowIdx,dayEvents, fetchEvent }) => {
       <div
         className="flex-1 cursor-pointer"
         onClick={() => {
+          fetchEvent(null);
           setDaySelected(day);
-          setShowEventModal(true)
+          setShowEventModal(true);
         }}
       >
         {dayEvents.map((event,i)=>(

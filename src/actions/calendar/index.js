@@ -72,6 +72,13 @@ export const fetchEvent = (event) => async (dispatch) => {
   dispatch(fetchEventAction(event));
 };
 
+
+//fetchSpecificEvent
+export const fetchEventById = (eventID) => async (dispatch)=>{
+  const response = await fiaECAPI.get(`tuitions/${eventID}`);
+  dispatch(fetchEventAction(response.data));
+}
+
 //edit one
 export const editEvent = (eventID, formValues) => async (dispatch) => {
   const response = await fiaECAPI.patch(`tuitions/${eventID}`, formValues);
